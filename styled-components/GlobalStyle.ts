@@ -32,8 +32,10 @@ const GlobalWrapper = styled.div`
   width: 92vw;
   height: 95.8vh;
   overflow-y: auto;
+  overflow-x: hidden;
   border: 1px solid #1e2d3d;
   border-radius: 8px;
+  position: relative;
 `;
 
 export { GlobalStyle, GlobalWrapper };
