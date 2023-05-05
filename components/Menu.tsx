@@ -67,6 +67,7 @@ export default function Menu() {
 
 const StyledMenu = styled.div`
   position: absolute;
+  z-index: 9;
   display: flex;
   flex-direction: column;
   background-color: #011627;
