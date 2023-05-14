@@ -36,6 +36,9 @@ const GlobalWrapper = styled.div`
   border: 1px solid #1e2d3d;
   border-radius: 8px;
   position: relative;
+  background-image: url('./assets/code-snippet.png');
+  background-position: bottom 0 left 0px;
+  background-size: 100%;
 `;
 
 export { GlobalStyle, GlobalWrapper };

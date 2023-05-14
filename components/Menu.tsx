@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useContext } from "react";
 import styled from "styled-components";
+import Footer from "./Footer";
 
 export default function Menu() {
   const context = useContext(MyContext);
@@ -23,44 +24,7 @@ export default function Menu() {
           _contact-me
         </Link>
       </>
-      <div
-        className={context.menu ? "find find-animate" : "find find-animate2"}
-      >
-        <p>find me in:</p>
-        <div>
-          <a
-            href="https://www.facebook.com/beqa.maisuradze.315"
-            target="_blank"
-          >
-            <Image
-              width={29}
-              height={29}
-              src={"/assets/facebook.svg"}
-              alt="facebook"
-            />
-          </a>
-
-          <a
-            href="https://www.linkedin.com/in/beka-maisuradze-76a730234/"
-            target="_blank"
-          >
-            <Image
-              width={29}
-              height={29}
-              src={"/assets/linkedin.svg"}
-              alt="linkedin"
-            />
-          </a>
-          <a href="https://github.com/beqa200" target="_blank">
-            <Image
-              width={29}
-              height={29}
-              src={"/assets/github.svg"}
-              alt="github"
-            />
-          </a>
-        </div>
-      </div>
+      <Footer />
     </StyledMenu>
   );
 }
@@ -77,7 +41,7 @@ const StyledMenu = styled.div`
   line-height: 21px;
 
   width: 92vw;
-  height: calc(95.8vh - 55px);
+  height: calc(95.8vh - 58px);
   left: 0;
   top: 55px;
 
@@ -87,55 +51,19 @@ const StyledMenu = styled.div`
     color: #ffffff;
   }
 
-  .find {
-    display: flex;
-    justify-content: space-between;
-    position: absolute;
-    bottom: 0;
-    height: 55px;
-    align-items: center;
-    width: 100%;
-    padding: 0 4px 0 18px;
-    color: #607b96;
-    border-top: 1px solid #1e2d3d;
-
-    div {
-      display: flex;
-      a {
-        border-left: 1px solid #1e2d3d;
-        padding: 11px;
-        box-sizing: content-box;
-      }
-    }
-  }
-
   @keyframes findAppear {
     from {
       margin-bottom: -1000px;
     }
     to {
       margin-bottom: 0;
-    }
-  }
-
-  @keyframes findDisappear {
-    from {
-      margin-bottom: 0;
-    }
-    to {
-      margin-bottom: -3000px;
+      display: flex;
     }
   }
 
   .find-animate {
     animation-name: findAppear;
     animation-duration: 1.2s;
-    animation-fill-mode: backwards;
-  }
-
-  .find-animate2 {
-    animation-name: findDisappear;
-    animation-duration: 1s;
     animation-fill-mode: backwards;
   }
 `;
