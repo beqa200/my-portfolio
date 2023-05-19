@@ -166,6 +166,38 @@ export default function about() {
 }
 
 const StyledAbout = styled.main`
+
+@keyframes filesAppear {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      margin-top: 0;
+    }
+    100% {
+      z-index: 1;
+      margin-top: 0;
+      opacity: 1;
+    }
+  }
+
+  @keyframes filesDisappear {
+    0% {
+      z-index: 1;
+      margin-top: 0px;
+      opacity: 1;
+    }
+    20% {
+      opacity: 0;
+    }
+    30% {
+      z-index: -1;
+    }
+    100% {
+      margin-top: -65px;
+    }
+  }
+  
   .heading {
     margin: 20px;
   }

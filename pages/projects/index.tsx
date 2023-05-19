@@ -59,7 +59,7 @@ export default function projects() {
           <div
             className={isProjects ? "files active2" : "files active2-reverse"}
           >
-            <div className="wrapper">
+            <div className={isProjects ? "wrapper" : "wrapper active3-reverse"}>
               {data.techStacks.map((item) => (
                 <div>
                   <input
@@ -112,44 +112,13 @@ const StyledProjects = styled.main`
     margin: 20px;
   }
 
-  @keyframes filesAppear {
-    0% {
-      opacity: 0;
-      margin-top: -265px;
-    }
-    50% {
-      margin-top: 0;
-    }
-    100% {
-      z-index: 1;
-      margin-top: 0;
-      opacity: 1;
-    }
-  }
-
-  @keyframes filesDisappear {
-    0% {
-      z-index: 1;
-      margin-top: 0px;
-      opacity: 1;
-    }
-    20% {
-      opacity: 0;
-    }
-    30% {
-      z-index: -1;
-    }
-    100% {
-      margin-top: -265px;
-    }
-  }
 
   .files {
     .wrapper {
       flex-direction: column;
       align-items: start;
       gap: 15px;
-      margin-top: 10px;
+      transition: 1s;
       div {
         padding: 0;
         gap: 20px;
@@ -185,6 +154,11 @@ const StyledProjects = styled.main`
           color: white;
         }
       }
+    }
+
+  
+    .active3-reverse {
+      margin-top: -200px;
     }
   }
 
