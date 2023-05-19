@@ -2,13 +2,13 @@
   "name": "beka-maisuradze",
   "personal-info": "",
   "proffesional-info": "",
-  "techStacks": ["React", "Next", "HTML", "CSS", "Tailwind", "Node"],
+  "techStacks": ["React", "Next", "Tailwind CSS", "Styled Components", "Node"],
   "projects": [
     {
       "id": 1,
       "name": "task-management-app",
       "description": "website for adding tasks and subtasks",
-      "teckstack": "React",
+      "teckstack": ["React", "Styled Components"],
       "img": "/assets/projects/task-management.png",
       "liveLink": "https://task-management-website-ten.vercel.app/platform-launch",
       "githubLink": "https://github.com/beqa200/task-management-website"

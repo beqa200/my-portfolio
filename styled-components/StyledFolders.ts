@@ -87,6 +87,7 @@ const StyledFolders = styled.section`
     animation-duration: 1s;
     animation-fill-mode: forwards;
   }
+
 `;
 
 export default StyledFolders;

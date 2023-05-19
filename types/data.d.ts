@@ -10,7 +10,7 @@ interface Project {
   id: number;
   name: string;
   description: string;
-  teckstack: string;
+  teckstack: string[];
   img: string;
   liveLink: string;
   githubLink: string;

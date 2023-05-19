@@ -13,6 +13,22 @@ import ProjectCard from "@/components/ProjectCard";
 
 export default function projects() {
   const [isProjects, setIsProjects] = useState(true);
+  const [techStaks, setTechStacks] = useState<string[]>([]);
+  console.log(techStaks);
+
+  const handleCheck = (isChecked: boolean, item: string) => {
+    if (isChecked) {
+      setTechStacks((prevtechStaks: string[]) => [...prevtechStaks, item]);
+    } else {
+      setTechStacks((prevtechStaks: string[]) =>
+        prevtechStaks.filter((prevtechStak) => prevtechStak !== item)
+      );
+    }
+  };
+
+  const areArraysEqual = (arr1: any[], arr2: any[]): boolean => {
+    return arr2.every((element) => arr1.includes(element));
+  };
 
   return (
     <>
@@ -46,7 +62,13 @@ export default function projects() {
             <div className="wrapper">
               {data.techStacks.map((item) => (
                 <div>
-                  <input type="checkbox" id={item} />
+                  <input
+                    type="checkbox"
+                    id={item}
+                    onClick={(event: any) => {
+                      handleCheck(event.target.checked, item);
+                    }}
+                  />
                   <label htmlFor={item}>{item}</label>
                 </div>
               ))}
@@ -54,16 +76,31 @@ export default function projects() {
           </div>
         </StyledFolders>
         <div className="main-content">
-          {data.projects.map((item) => (
-            <>
-              <div className="heading">
-                <PurpleText>Project {item.id}</PurpleText>{" "}
-                <PaleText>/ {item.name}</PaleText>
-              </div>
+          {data.projects.map((item) => {
+            if (techStaks.length == 0) {
+              return (
+                <>
+                  <div className="heading">
+                    <PurpleText>Project {item.id}</PurpleText>{" "}
+                    <PaleText>/ {item.name}</PaleText>
+                  </div>
 
-              <ProjectCard data={item} />
-            </>
-          ))}
+                  <ProjectCard data={item} />
+                </>
+              );
+            } else if (areArraysEqual(item.teckstack, techStaks)) {
+              return (
+                <>
+                  <div className="heading">
+                    <PurpleText>Project {item.id}</PurpleText>{" "}
+                    <PaleText>/ {item.name}</PaleText>
+                  </div>
+
+                  <ProjectCard data={item} />
+                </>
+              );
+            }
+          })}
         </div>
       </StyledProjects>
     </>
@@ -73,6 +110,38 @@ export default function projects() {
 const StyledProjects = styled.main`
   .heading {
     margin: 20px;
+  }
+
+  @keyframes filesAppear {
+    0% {
+      opacity: 0;
+      margin-top: -265px;
+    }
+    50% {
+      margin-top: 0;
+    }
+    100% {
+      z-index: 1;
+      margin-top: 0;
+      opacity: 1;
+    }
+  }
+
+  @keyframes filesDisappear {
+    0% {
+      z-index: 1;
+      margin-top: 0px;
+      opacity: 1;
+    }
+    20% {
+      opacity: 0;
+    }
+    30% {
+      z-index: -1;
+    }
+    100% {
+      margin-top: -265px;
+    }
   }
 
   .files {
