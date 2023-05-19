@@ -12,7 +12,7 @@ export default function Footer() {
           <Image
             width={29}
             height={29}
-            src={"/assets/facebook.svg"}
+            src={"/assets/contact-icons/facebook.svg"}
             alt="facebook"
           />
         </a>
@@ -24,7 +24,7 @@ export default function Footer() {
           <Image
             width={29}
             height={29}
-            src={"/assets/linkedin.svg"}
+            src={"/assets/contact-icons/linkedin.svg"}
             alt="linkedin"
           />
         </a>
@@ -32,7 +32,7 @@ export default function Footer() {
           <Image
             width={29}
             height={29}
-            src={"/assets/github.svg"}
+            src={"/assets/contact-icons/github.svg"}
             alt="github"
           />
         </a>

@@ -106,7 +106,7 @@ export default function about() {
               <Image
                 width={12.73}
                 height={7.78}
-                src={"/assets/mail-icon.png"}
+                src={"/assets/contact-icons/mail-icon.png"}
                 alt="arrow"
               />
               <PaleText>beqamaisuradze912@gmail.com</PaleText>
@@ -116,7 +116,7 @@ export default function about() {
               <Image
                 width={12.73}
                 height={7.78}
-                src={"/assets/phone-icon.png"}
+                src={"/assets/contact-icons/phone-icon.png"}
                 alt="arrow"
               />
               <PaleText>+(995) 579 09 55 87</PaleText>
