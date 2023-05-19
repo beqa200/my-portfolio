@@ -6,16 +6,17 @@ import {
 } from "@/styled-components/StyledTexts";
 import styled from "styled-components";
 import StyledFolders from "@/styled-components/StyledFolders";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Image from "next/image";
-import data from "../../data.json";
 import ProjectCard from "@/components/ProjectCard";
+import { MyContext } from "../_app";
 
 export default function projects() {
   const [isProjects, setIsProjects] = useState(true);
   const [techStaks, setTechStacks] = useState<string[]>([]);
-  console.log(techStaks);
 
+  const context = useContext(MyContext);
+  
   const handleCheck = (isChecked: boolean, item: string) => {
     if (isChecked) {
       setTechStacks((prevtechStaks: string[]) => [...prevtechStaks, item]);
@@ -60,7 +61,7 @@ export default function projects() {
             className={isProjects ? "files active2" : "files active2-reverse"}
           >
             <div className={isProjects ? "wrapper" : "wrapper active3-reverse"}>
-              {data.techStacks.map((item) => (
+              {context.data.techStacks.map((item) => (
                 <div>
                   <input
                     type="checkbox"
@@ -76,7 +77,7 @@ export default function projects() {
           </div>
         </StyledFolders>
         <div className="main-content">
-          {data.projects.map((item) => {
+          {context.data.projects.map((item) => {
             if (techStaks.length == 0) {
               return (
                 <>

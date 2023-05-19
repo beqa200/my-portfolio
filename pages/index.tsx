@@ -6,9 +6,13 @@ import {
   WhiteText,
 } from "@/styled-components/StyledTexts";
 import Head from "next/head";
+import { useContext } from "react";
 import styled from "styled-components";
+import { MyContext } from "./_app";
 
 export default function Home() {
+  const context = useContext(MyContext);
+
   return (
     <>
       <Head>
@@ -24,7 +28,7 @@ export default function Home() {
             Beka <br /> Maisuradze
           </WhiteText>
           <GreenText className="profession">
-            {"> Full-Stack Developer"}
+            {`> ${context.data.position}`}
           </GreenText>
         </div>
 
@@ -34,7 +38,7 @@ export default function Home() {
             <PurpleText>const</PurpleText> <GreenText>githubLink</GreenText>{" "}
             <WhiteText>=</WhiteText>{" "}
             <a href="https://github.com/beqa200" target="_blank">
-              <OrangeText style={{textDecoration: "underline"}}>
+              <OrangeText style={{ textDecoration: "underline" }}>
                 https://
                 <br />
                 github.com/beqa200
@@ -57,7 +61,7 @@ const StyledHome = styled.main`
   .wrapper {
     margin-left: 18px;
     padding-top: 10vh;
-    
+
     .greeting {
       font-size: 18px;
       line-height: 24px;
@@ -69,8 +73,6 @@ const StyledHome = styled.main`
       line-height: 100%;
       margin: 10px 0 8px -2px;
     }
-
-
   }
 
   .github {
@@ -83,7 +85,5 @@ const StyledHome = styled.main`
         display: inline;
       }
     }
-
-    
   }
 `;

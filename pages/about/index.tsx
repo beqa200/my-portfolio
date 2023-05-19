@@ -3,13 +3,17 @@ import Head from "next/head";
 import styled from "styled-components";
 import Image from "next/image";
 import StyledFolders from "@/styled-components/StyledFolders";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { MyContext } from "../_app";
 
 export default function about() {
   const [isInfo, setisInfo] = useState(true);
   const [isContacts, setIsContacts] = useState(false);
   const [isPersonal, setisPersonal] = useState(true);
   const [isProffesional, setisProffesional] = useState(false);
+
+  const context = useContext(MyContext);
+
   return (
     <>
       <Head>
@@ -129,16 +133,7 @@ export default function about() {
             <PaleText>
               / personal <br /> <br />
             </PaleText>
-            <PaleText>
-              I have 5 years of experience in web development lorem ipsum dolor
-              sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-              ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-              in. Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-              officia deserunt mollit anim id est laborum.
-            </PaleText>
+            <PaleText>{context.data.personalInfo}</PaleText>
           </div>
 
           <div className={isProffesional ? "active" : "inactive"}>
@@ -146,18 +141,7 @@ export default function about() {
             <PaleText>
               / proffesional <br /> <br />
             </PaleText>
-            <PaleText>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
-            </PaleText>
+            <PaleText>{context.data.proffesionalInfo}</PaleText>
           </div>
         </div>
       </StyledAbout>
@@ -166,8 +150,7 @@ export default function about() {
 }
 
 const StyledAbout = styled.main`
-
-@keyframes filesAppear {
+  @keyframes filesAppear {
     0% {
       opacity: 0;
     }
@@ -197,7 +180,7 @@ const StyledAbout = styled.main`
       margin-top: -65px;
     }
   }
-  
+
   .heading {
     margin: 20px;
   }

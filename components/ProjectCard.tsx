@@ -22,7 +22,7 @@ export default function ProjectCard({ data }: { data: Project }) {
           </StyledButton>
 
           <a href={data.githubLink}>
-            <img
+            <Image
               width={200}
               height={200}
               src={"/assets/contact-icons/github.svg"}
@@ -39,10 +39,12 @@ const StyledProjectCard = styled.div`
   background-color: #011221;
   border: 2px solid #1c2b3a;
   width: 90%;
+  max-width: 370px;
   border-radius: 15px;
 
   .main-img {
     width: 100%;
+    
     border-radius: 15px 15px 0px 0px;
   }
 

@@ -1,5 +1,5 @@
 interface Data {
-  name: string;
+  position: string;
   personalInfo: string;
   proffesionalInfo: string;
   techStacks: string[];

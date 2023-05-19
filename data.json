@@ -1,7 +1,7 @@
 {
-  "name": "beka-maisuradze",
-  "personal-info": "",
-  "proffesional-info": "",
+  "position": "Full-Stack Developer",
+  "personalInfo": "",
+  "proffesionalInfo": "",
   "techStacks": ["React", "Next", "Tailwind CSS", "Styled Components", "Node"],
   "projects": [
     {
