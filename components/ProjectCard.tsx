@@ -16,9 +16,7 @@ export default function ProjectCard({ data }: { data: Project }) {
         <PaleText>{data.description}</PaleText>
         <div className="links">
           <StyledButton>
-            <a href={data.liveLink}>
-              <WhiteText>view-project</WhiteText>
-            </a>
+            <a href={data.liveLink}>view-project</a>
           </StyledButton>
 
           <a href={data.githubLink}>
@@ -44,7 +42,7 @@ const StyledProjectCard = styled.div`
 
   .main-img {
     width: 100%;
-    
+
     border-radius: 15px 15px 0px 0px;
   }
 

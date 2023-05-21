@@ -5,6 +5,10 @@ const StyledButton = styled.button`
   border-radius: 8px;
   padding: 10px 14px;
   border: none;
+  font-weight: 250;
+  font-size: 16px;
+  color: #ffffff;
+  
 `;
 
 export default StyledButton;

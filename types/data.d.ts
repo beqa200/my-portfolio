@@ -3,6 +3,7 @@ interface Data {
   personalInfo: string;
   proffesionalInfo: string;
   techStacks: string[];
+  social: Social[];
   projects: Project[];
 }
 
@@ -14,4 +15,9 @@ interface Project {
   img: string;
   liveLink: string;
   githubLink: string;
+}
+
+interface Social {
+  name: string,
+  link: string
 }

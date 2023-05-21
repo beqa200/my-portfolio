@@ -3,6 +3,11 @@
   "personalInfo": "",
   "proffesionalInfo": "",
   "techStacks": ["React", "Next", "Tailwind CSS", "Styled Components", "Node"],
+  "social": [
+    { "name": "Facebook", "link": "https://www.facebook.com/beqa.maisuradze.315/" },
+    { "name": "Instagram", "link": "https://www.instagram.com/beqa_maisuradzee/" },
+    { "name": "LinkedIn", "link": "https://www.linkedin.com/in/beka-maisuradze-76a730234/" }
+  ],
   "projects": [
     {
       "id": 1,

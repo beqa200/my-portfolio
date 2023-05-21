@@ -11,6 +11,7 @@ export const MyContext = createContext<contextProps>({
     personalInfo: '',
     proffesionalInfo: '',
     techStacks: [],
+    social: [],
     projects: [],
   },
 });
