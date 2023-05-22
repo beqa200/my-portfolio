@@ -4,7 +4,7 @@ const StyledInput = styled.input`
   height: 41px;
   background: #011221;
   border: 1px solid #1e2d3d;
-  border-radius: 8px;
+  border-radius: 0.7rem;
   width: 100%;
   outline: none;
   font-weight: 450;
@@ -21,7 +21,7 @@ const BigStyledInput = styled.textarea`
    height: 41px;
   background: #011221;
   border: 1px solid #1e2d3d;
-  border-radius: 8px;
+  border-radius: 0.7rem;
   width: 100%;
   height: 160px;
   outline: none;
@@ -33,6 +33,7 @@ const BigStyledInput = styled.textarea`
   resize: none;
   &:focus {
     outline: 1px solid #607b96;
+    border-radius: 0.7rem;
   }
 `;
 
