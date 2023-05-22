@@ -7,6 +7,7 @@ import Image from "next/image";
 import { BigStyledInput, StyledInput } from "@/styled-components/StyledInput";
 import StyledButton from "@/styled-components/StyledButton";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import Head from "next/head";
 
 export default function index() {
   const context = useContext(MyContext);
@@ -33,107 +34,116 @@ export default function index() {
   };
 
   return (
-    <StyledContact>
-      <WhiteText className="heading">_contact-me</WhiteText>
-      <StyledFolders>
-        <div
-          onClick={() => {
-            setIsContacts(!isContacts);
-          }}
-          className={isContacts ? "folder active" : "folder"}
-        >
-          <Image
-            width={8.5}
-            height={6}
-            className="arrow"
-            src={"/assets/triangle.png"}
-            alt="triangle"
-          />
-          <WhiteText>contacts</WhiteText>
-        </div>
-        <div className={isContacts ? "files active2" : "files active2-reverse"}>
-          <div>
+    <>
+      <Head>
+        <title>Contact Me</title>
+      </Head>
+
+      <StyledContact>
+        <WhiteText className="heading">_contact-me</WhiteText>
+        <StyledFolders>
+          <div
+            onClick={() => {
+              setIsContacts(!isContacts);
+            }}
+            className={isContacts ? "folder active" : "folder"}
+          >
             <Image
-              width={12.73}
-              height={7.78}
-              src={"/assets/contact-icons/mail-icon.png"}
-              alt="arrow"
+              width={8.5}
+              height={6}
+              className="arrow"
+              src={"/assets/triangle.png"}
+              alt="triangle"
             />
-            <PaleText>beqamaisuradze912@gmail.com</PaleText>
+            <WhiteText>contacts</WhiteText>
           </div>
-          <div>
-            {" "}
+          <div
+            className={isContacts ? "files active2" : "files active2-reverse"}
+          >
+            <div>
+              <Image
+                width={12.73}
+                height={7.78}
+                src={"/assets/contact-icons/mail-icon.png"}
+                alt="arrow"
+              />
+              <PaleText>beqamaisuradze912@gmail.com</PaleText>
+            </div>
+            <div>
+              {" "}
+              <Image
+                width={12.73}
+                height={7.78}
+                src={"/assets/contact-icons/phone-icon.png"}
+                alt="arrow"
+              />
+              <PaleText>+(995) 579 09 55 87</PaleText>
+            </div>
+          </div>
+
+          <div
+            onClick={() => {
+              setIsFindMe(!isFindMe);
+            }}
+            className={isFindMe ? "folder active" : "folder"}
+          >
             <Image
-              width={12.73}
-              height={7.78}
-              src={"/assets/contact-icons/phone-icon.png"}
-              alt="arrow"
+              width={8.5}
+              height={6}
+              className="arrow"
+              src={"/assets/triangle.png"}
+              alt="triangle"
             />
-            <PaleText>+(995) 579 09 55 87</PaleText>
+            <WhiteText>find-me-also-in</WhiteText>
           </div>
-        </div>
+          <div className={isFindMe ? "files active2" : "files active2-reverse"}>
+            {context.data.social.map((item) => (
+              <a href={item.link} target="_blank" key={Math.random()}>
+                <div>
+                  <Image
+                    width={12.73}
+                    height={7.78}
+                    src={"/assets/link.png"}
+                    alt="arrow"
+                  />
+                  <PaleText>{item.name}</PaleText>
+                </div>
+              </a>
+            ))}
+          </div>
+        </StyledFolders>
+        {!submit ? (
+          <form className="main-content" onSubmit={handleSubmit(onSubmit)}>
+            <div>
+              <PaleText>_name:</PaleText>
+              <StyledInput {...register("name", { required: true })} />
+            </div>
 
-        <div
-          onClick={() => {
-            setIsFindMe(!isFindMe);
-          }}
-          className={isFindMe ? "folder active" : "folder"}
-        >
-          <Image
-            width={8.5}
-            height={6}
-            className="arrow"
-            src={"/assets/triangle.png"}
-            alt="triangle"
-          />
-          <WhiteText>find-me-also-in</WhiteText>
-        </div>
-        <div className={isFindMe ? "files active2" : "files active2-reverse"}>
-          {context.data.social.map((item) => (
-            <a href={item.link} target="_blank">
-              <div>
-                <Image
-                  width={12.73}
-                  height={7.78}
-                  src={"/assets/link.png"}
-                  alt="arrow"
-                />
-                <PaleText>{item.name}</PaleText>
-              </div>
-            </a>
-          ))}
-        </div>
-      </StyledFolders>
-      {!submit ? (
-        <form className="main-content" onSubmit={handleSubmit(onSubmit)}>
-          <div>
-            <PaleText>_name:</PaleText>
-            <StyledInput {...register("name", { required: true })} />
-          </div>
+            <div>
+              <PaleText>_email:</PaleText>
+              <StyledInput {...register("email", { required: true })} />
+            </div>
 
-          <div>
-            <PaleText>_email:</PaleText>
-            <StyledInput {...register("email", { required: true })} />
-          </div>
-
-          <div>
-            <PaleText>_message:</PaleText>
-            <BigStyledInput {...register("message", { required: true })} />
-          </div>
-          <StyledButton>submit-message</StyledButton>
-        </form>
-      ) : (
-        <StyledThanks>
-          <WhiteText className="heading">Thank you! 🤘</WhiteText>{" "}
-          <PaleText className="text">
-            Your message has been accepted. You will recieve answer really soon!
-          </PaleText>
-          <StyledButton onClick={() => newMessage()}>
-            send-new-message
-          </StyledButton>
-        </StyledThanks>
-      )}
-    </StyledContact>
+            <div>
+              <PaleText>_message:</PaleText>
+              <BigStyledInput {...register("message", { required: true })} />
+            </div>
+            <StyledButton>submit-message</StyledButton>
+          </form>
+        ) : (
+          <StyledThanks>
+            <WhiteText className="heading">Thank you! 🤘</WhiteText>{" "}
+            <PaleText className="text">
+              Your message has been accepted. You will recieve answer really
+              soon!
+            </PaleText>
+            <StyledButton onClick={() => newMessage()}>
+              send-new-message
+            </StyledButton>
+          </StyledThanks>
+        )}
+      </StyledContact>
+    </>
   );
 }
 
