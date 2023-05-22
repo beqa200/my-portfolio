@@ -15,6 +15,7 @@ const GreenText = styled(PaleText)`
 
 const PurpleText = styled(PaleText)`
   color: #4d5bce;
+  font-weight: 700;
 `;
 
 const OrangeText = styled(PaleText)`

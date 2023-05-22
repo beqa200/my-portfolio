@@ -1,12 +1,21 @@
 {
   "position": "Full-Stack Developer",
-  "personalInfo": "",
-  "proffesionalInfo": "",
+  "personalInfo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam facilisis at lectus sit amet egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec diam dui, suscipit nec mollis nec, lobortis id massa. Maecenas convallis iaculis nunc et ultricies. Donec porttitor tempor dolor, ac rhoncus quam varius nec. Ut erat nisl, accumsan quis risus vitae, posuere dapibus tortor. Maecenas consequat ac ipsum non scelerisque. Nunc id sagittis orci. Curabitur condimentum nibh quis lacus feugiat, id pulvinar turpis semper. Quisque nec sem sapien.",
+  "proffesionalInfo": "Nullam mollis nulla sed sem sollicitudin luctus. Suspendisse volutpat consequat mi nec viverra. Cras rutrum eros a sem pulvinar tincidunt. Curabitur diam nunc, molestie non justo vitae, vestibulum facilisis ex. Duis tristique sollicitudin ultricies. Vivamus ornare quis arcu id ullamcorper. Nullam dapibus, sem ut fringilla lobortis, tellus nulla suscipit risus, vel hendrerit metus sem eget erat. In sit amet enim pellentesque, tincidunt odio nec, viverra ipsum. Sed turpis risus, ornare eu gravida lacinia, malesuada in erat.",
   "techStacks": ["React", "Next", "Tailwind CSS", "Styled Components", "Node"],
   "social": [
-    { "name": "Facebook", "link": "https://www.facebook.com/beqa.maisuradze.315/" },
-    { "name": "Instagram", "link": "https://www.instagram.com/beqa_maisuradzee/" },
-    { "name": "LinkedIn", "link": "https://www.linkedin.com/in/beka-maisuradze-76a730234/" }
+    {
+      "name": "Facebook",
+      "link": "https://www.facebook.com/beqa.maisuradze.315/"
+    },
+    {
+      "name": "Instagram",
+      "link": "https://www.instagram.com/beqa_maisuradzee/"
+    },
+    {
+      "name": "LinkedIn",
+      "link": "https://www.linkedin.com/in/beka-maisuradze-76a730234/"
+    }
   ],
   "projects": [
     {

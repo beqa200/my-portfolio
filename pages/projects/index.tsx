@@ -16,7 +16,7 @@ export default function projects() {
   const [techStaks, setTechStacks] = useState<string[]>([]);
 
   const context = useContext(MyContext);
-  
+
   const handleCheck = (isChecked: boolean, item: string) => {
     if (isChecked) {
       setTechStacks((prevtechStaks: string[]) => [...prevtechStaks, item]);
@@ -77,6 +77,13 @@ export default function projects() {
           </div>
         </StyledFolders>
         <div className="main-content">
+          <div className="selected">
+            <WhiteText>// projects </WhiteText>
+            {" "}
+            <PaleText>
+              {techStaks.length != 0 && "/" + techStaks.join("; ")}
+            </PaleText>
+          </div>
           {context.data.projects.map((item) => {
             if (techStaks.length == 0) {
               return (
@@ -112,7 +119,6 @@ const StyledProjects = styled.main`
   .heading {
     margin: 20px;
   }
-
 
   .files {
     .wrapper {
@@ -157,7 +163,6 @@ const StyledProjects = styled.main`
       }
     }
 
-  
     .active3-reverse {
       margin-top: -200px;
     }
@@ -168,7 +173,16 @@ const StyledProjects = styled.main`
     flex-direction: column;
     align-items: center;
     margin-top: 30px;
-
+    
+    .selected {
+      width: 100%;
+      /* display: flex;
+      justify-content: start; */
+      padding: 15px;
+      p {
+      display: inline
+    }
+    }
     .heading {
       margin-bottom: 16px;
       p {
