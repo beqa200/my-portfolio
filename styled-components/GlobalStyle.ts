@@ -28,16 +28,16 @@ const GlobalStyle = createGlobalStyle`
     }
 `;
 
-const GlobalWrapper = styled.div`
+const GlobalWrapper = styled.div<{ menu: Boolean }>`
   background: #011627;
   width: 92vw;
   height: 95.8vh;
-  overflow-y: auto;
+  overflow-y: ${({ menu }) => (menu ? "hidden" : "auto")};
   overflow-x: hidden;
   border: 1px solid #1e2d3d;
   border-radius: 8px;
   position: relative;
-  background-image: url('./assets/code-snippet.png');
+  background-image: url("./assets/code-snippet.png");
   background-position: bottom 0 left 0px;
   background-size: 100%;
 `;

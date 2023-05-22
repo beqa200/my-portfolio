@@ -12,7 +12,7 @@ export default function index() {
   const context = useContext(MyContext);
   const [isContacts, setIsContacts] = useState(false);
   const [isFindMe, setIsFindMe] = useState(false);
-  const [submit, setSubmit] = useState(true);
+  const [submit, setSubmit] = useState(false);
   const { register, handleSubmit, watch, setValue } = useForm<FormType>();
 
   const onSubmit: SubmitHandler<FormType> = (data) => {

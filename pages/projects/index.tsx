@@ -55,7 +55,7 @@ export default function projects() {
               src={"/assets/triangle.png"}
               alt="triangle"
             />
-            <WhiteText>projects</WhiteText>
+            <WhiteText>TechStacks</WhiteText>
           </div>
           <div
             className={isProjects ? "files active2" : "files active2-reverse"}

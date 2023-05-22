@@ -21,7 +21,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <MyContext.Provider value={{ menu, setMenu, data }}>
-      <GlobalWrapper>
+      <GlobalWrapper menu={menu}>
         <GlobalStyle />
         <Header />
         <Component {...pageProps} />
