@@ -13,12 +13,14 @@ const StyledFolders = styled.section`
     padding: 5px 20px;
     img {
       object-fit: none;
-      scale: 2.5;
+      width: 10px;
+      height: 10px;
       transition: 0.4s;
     }
   }
 
   .active {
+    margin-left: 1px;
     .arrow {
       rotate: 90deg;
     }
@@ -38,8 +40,9 @@ const StyledFolders = styled.section`
       gap: 7px;
       padding: 5px 20px;
       img {
+        height: 15px;
+        width: 16px;
         object-fit: none;
-        scale: 2;
         transition: 0.4s;
       }
     }

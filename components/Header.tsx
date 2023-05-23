@@ -28,35 +28,22 @@ export default function Header() {
 
       <nav>
         <div className="flex-wrapper">
-          <Link
-            href="/"
-            style={path == "/" ? { borderBottom: "3px solid  #FEA55F" } : {}}
-          >
+          <Link href="/" className={path == "/" ? "active" : ""}>
             <PaleText>_hello</PaleText>
           </Link>
-          <Link
-            href="/about"
-            style={
-              path == "/about" ? { borderBottom: "3px solid  #FEA55F" } : {}
-            }
-          >
+          <Link href="/about" className={path == "/about" ? "active" : ""}>
             <PaleText>_about_me</PaleText>
           </Link>
           <Link
             href="/projects"
-            style={
-              path == "/projects" ? { borderBottom: "3px solid  #FEA55F" } : {}
-            }
+            className={path == "/projects" ? "active" : ""}
           >
             <PaleText>_projects</PaleText>
           </Link>
         </div>
         <Link
           href="/contact-me"
-          className="contact"
-          style={
-            path == "/contact-me" ? { borderBottom: "3px solid  #FEA55F" } : {}
-          }
+          className={path == "/contact-me" ? "contact active" : "contact"}
         >
           <PaleText>_contact-me</PaleText>
         </Link>
@@ -76,14 +63,14 @@ const StyledHeader = styled.header`
   padding: 0 18px;
   border-bottom: 1px solid #1e2d3d;
 
-  @media (min-width: 1300px) {
+  @media (min-width: 1440px) {
     justify-content: space-between;
     gap: 100px;
     padding-right: 0;
   }
 
   .name {
-    @media (min-width: 1300px) {
+    @media (min-width: 1440px) {
       width: 160px;
     }
   }
@@ -107,7 +94,7 @@ const StyledHeader = styled.header`
   }
 
   .burger-icon {
-    @media (min-width: 1300px) {
+    @media (min-width: 1440px) {
       display: none;
     }
   }
@@ -167,11 +154,24 @@ const StyledHeader = styled.header`
       border-left: 1px solid #1e2d3d;
 
       padding: 16px 30px;
+
     }
 
-    .contact {
+    @keyframes borderActive {
+      0% {
+        opacity: 0;
+        margin-top: -20px;
+      }
+      100% {
+        opacity: 1;
+      }
     }
-    @media (min-width: 1300px) {
+    .active {
+      border-bottom: 3px solid #fea55f;
+      animation-name: borderActive;
+      animation-duration: 1s;
+    }
+    @media (min-width: 1440px) {
       display: flex;
       width: 85%;
       justify-content: space-between;
