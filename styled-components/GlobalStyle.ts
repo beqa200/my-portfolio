@@ -40,6 +40,10 @@ const GlobalWrapper = styled.div<{ menu: Boolean }>`
   background-image: url("./assets/code-snippet.png");
   background-position: bottom 0 left 0px;
   background-size: 100%;
+
+  @media (min-width: 1300px) {
+    background-image: none;
+  }
 `;
 
 export { GlobalStyle, GlobalWrapper };

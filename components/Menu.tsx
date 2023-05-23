@@ -45,6 +45,10 @@ const StyledMenu = styled.div`
   left: 0;
   top: 55px;
 
+  @media (min-width: 1300px) {
+    display: none;
+  }
+
   a {
     border-bottom: 1px solid #1e2d3d;
     padding: 17px 14px;
