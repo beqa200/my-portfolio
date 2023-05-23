@@ -39,7 +39,7 @@ export default function Home() {
             <PurpleText>const</PurpleText> <GreenText>githubLink</GreenText>{" "}
             <WhiteText>=</WhiteText>{" "}
             <a href="https://github.com/beqa200" target="_blank">
-              <OrangeText style={{ textDecoration: "underline" }}>
+              <OrangeText className="navigate">
                 https://
                 <br />
                 github.com/beqa200
@@ -155,6 +155,16 @@ const StyledHome = styled.main`
           font-size: 20px;
         }
       }
+      @media (min-width: 1440px) {
+        .navigate {
+          text-decoration: underline;
+          line-height: 20px;
+          &:hover {
+            font-size: 22px;
+            transition: 0.5s;
+          }
+        }
+      }
     }
   }
 
@@ -172,8 +182,6 @@ const StyledHome = styled.main`
       transform: translate(0, -50%);
       animation-name: loadAnimatePattern;
       animation-duration: 2s;
-
-      transition: 2s;
     }
   }
 `;
