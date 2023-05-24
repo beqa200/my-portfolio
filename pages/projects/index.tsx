@@ -37,43 +37,48 @@ export default function projects() {
         <title>Projects</title>
       </Head>
       <StyledProjects>
-        <WhiteText className="heading">_projects</WhiteText>
+        <div className="flex-wrapper">
+          <WhiteText className="heading">_projects</WhiteText>
 
-        <StyledFolders>
-          <div
-            onClick={() => {
-              setIsProjects(!isProjects);
-            }}
-            className={isProjects ? "folder active" : "folder"}
-          >
-            <Image
-              width={8.5}
-              height={6}
-              className="arrow"
-              src={"/assets/triangle.png"}
-              alt="triangle"
-            />
-            <WhiteText>TechStacks</WhiteText>
-          </div>
-          <div
-            className={isProjects ? "files active2" : "files active2-reverse"}
-          >
-            <div className={isProjects ? "wrapper" : "wrapper active3-reverse"}>
-              {context.data.techStacks.map((item) => (
-                <div>
-                  <input
-                    type="checkbox"
-                    id={item}
-                    onClick={(event: any) => {
-                      handleCheck(event.target.checked, item);
-                    }}
-                  />
-                  <label htmlFor={item}>{item}</label>
-                </div>
-              ))}
+          <StyledFolders>
+            <div
+              onClick={() => {
+                setIsProjects(!isProjects);
+              }}
+              className={isProjects ? "folder active" : "folder"}
+            >
+              <Image
+                width={8.5}
+                height={6}
+                className="arrow"
+                src={"/assets/triangle.png"}
+                alt="triangle"
+              />
+              <WhiteText>TechStacks</WhiteText>
             </div>
-          </div>
-        </StyledFolders>
+            <div
+              className={isProjects ? "files active2" : "files active2-reverse"}
+            >
+              <div
+                className={isProjects ? "wrapper" : "wrapper active3-reverse"}
+              >
+                {context.data.techStacks.map((item) => (
+                  <div>
+                    <input
+                      type="checkbox"
+                      id={item}
+                      onClick={(event: any) => {
+                        handleCheck(event.target.checked, item);
+                      }}
+                    />
+                    <label htmlFor={item}>{item}</label>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </StyledFolders>
+        </div>
+
         <div className="main-content">
           <div className="selected">
             <WhiteText>// projects </WhiteText>{" "}
@@ -85,7 +90,7 @@ export default function projects() {
             if (techStaks.length == 0) {
               return (
                 <>
-                  <div className="heading">
+                  <div className="project-heading">
                     <PurpleText>Project {item.id}</PurpleText>{" "}
                     <PaleText>/ {item.name}</PaleText>
                   </div>
@@ -96,7 +101,7 @@ export default function projects() {
             } else if (areArraysEqual(item.teckstack, techStaks)) {
               return (
                 <>
-                  <div className="heading">
+                  <div className="project-heading">
                     <PurpleText>Project {item.id}</PurpleText>{" "}
                     <PaleText>/ {item.name}</PaleText>
                   </div>
@@ -113,8 +118,19 @@ export default function projects() {
 }
 
 const StyledProjects = styled.main`
+  height: calc(95.8vh - 57px);
+  overflow: hidden;
+
+  @media (min-width: 1440px) {
+    display: flex;
+  }
+
   .heading {
-    margin: 20px;
+    padding: 20px;
+
+    @media (min-width: 1440px) {
+      border-right: 1px solid #1e2d3d;
+    }
   }
 
   .files {
@@ -173,13 +189,12 @@ const StyledProjects = styled.main`
 
     .selected {
       width: 100%;
-      padding: 15px 0 0 15px;
+      padding: 0 0 15px 15px;
       p {
         display: inline;
       }
     }
-    .heading {
-      margin-bottom: 16px;
+    .project-heading {
       p {
         display: inline;
       }

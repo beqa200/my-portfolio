@@ -7,7 +7,7 @@ export default function Footer() {
   const context = useContext(MyContext);
   return (
     <StyledFooter className={context.menu ? "find-animate" : "find-animate2"}>
-      <p>find me in:</p>
+      <p className="find">find me in:</p>
       <div className="wrapper">
         <div>
           <a
@@ -61,6 +61,10 @@ const StyledFooter = styled.footer`
   border-top: 1px solid #1e2d3d;
   overflow: hidden;
   background-color: #011627;
+
+  .find {
+    width: 120px;
+  }
 
   @media (min-width: 1440px) {
     justify-content: start;

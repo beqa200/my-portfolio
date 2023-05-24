@@ -71,6 +71,7 @@ const StyledHome = styled.main`
   height: calc(95.8vh - 57px);
   position: relative;
   overflow: hidden;
+
   @keyframes loadAnimateWrapper {
     0% {
       opacity: 0;
@@ -179,7 +180,7 @@ const StyledHome = styled.main`
       gap: 2vh;
       flex-direction: column;
       top: 50%;
-      transform: translate(0, -50%);
+      transform: translate(0, -54%);
       animation-name: loadAnimatePattern;
       animation-duration: 2s;
     }

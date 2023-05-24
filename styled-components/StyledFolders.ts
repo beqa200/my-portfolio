@@ -5,6 +5,11 @@ const StyledFolders = styled.section`
   flex-direction: column;
   gap: 2px;
 
+  @media (min-width: 1440px) {
+    border-right: 1px solid #1e2d3d;
+    height: 100vh;
+  }
+
   .folder {
     background-color: #1e2d3d;
     display: flex;
