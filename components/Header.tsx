@@ -28,25 +28,35 @@ export default function Header() {
 
       <nav>
         <div className="flex-wrapper">
-          <Link href="/" className={path == "/" ? "active" : ""}>
+          <StyledLink
+            href="/"
+            className={path == "/" ? "active" : ""}
+            isActive={path == "/"}
+          >
             <PaleText>_hello</PaleText>
-          </Link>
-          <Link href="/about" className={path == "/about" ? "active" : ""}>
+          </StyledLink>
+          <StyledLink
+            href="/about"
+            className={path == "/about" ? "active" : ""}
+            isActive={path == "/about"}
+          >
             <PaleText>_about_me</PaleText>
-          </Link>
-          <Link
+          </StyledLink>
+          <StyledLink
             href="/projects"
             className={path == "/projects" ? "active" : ""}
+            isActive={path == "/projects"}
           >
             <PaleText>_projects</PaleText>
-          </Link>
+          </StyledLink>
         </div>
-        <Link
+        <StyledLink
           href="/contact-me"
           className={path == "/contact-me" ? "contact active" : "contact"}
+          isActive={path == "/contact-me"}
         >
           <PaleText>_contact-me</PaleText>
-        </Link>
+        </StyledLink>
       </nav>
 
       <Menu />
@@ -150,27 +160,8 @@ const StyledHeader = styled.header`
   nav {
     display: none;
 
-    a {
-      border-left: 1px solid #1e2d3d;
 
-      padding: 16px 30px;
-
-    }
-
-    @keyframes borderActive {
-      0% {
-        opacity: 0;
-        margin-top: -20px;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
-    .active {
-      border-bottom: 3px solid #fea55f;
-      animation-name: borderActive;
-      animation-duration: 1s;
-    }
+    
     @media (min-width: 1440px) {
       display: flex;
       width: 85%;
@@ -182,4 +173,33 @@ const StyledHeader = styled.header`
       }
     }
   }
+`;
+
+const StyledLink = styled(Link)<{ isActive: Boolean }>`
+  border-left: 1px solid #1e2d3d;
+
+  padding: 16px 30px;
+
+  
+  @keyframes borderActive {
+      0% {
+        opacity: 0.5;
+        scale: 0.9
+      }
+      100% {
+        opacity: 1;
+        scale: 1;
+      }
+    }
+
+  ${({ isActive }) =>
+    isActive
+      ? `border-bottom: 3px solid #fea55f;
+      animation-name: borderActive;
+      animation-duration: 1s`
+      : `&:hover {
+       opacity: 0.5;
+       scale: 0.9;
+      transition: 1s;
+      }`}
 `;
