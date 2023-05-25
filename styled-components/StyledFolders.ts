@@ -22,6 +22,11 @@ const StyledFolders = styled.section`
       height: 10px;
       transition: 0.4s;
     }
+
+    &:hover {
+      cursor: pointer;
+    
+    }
   }
 
   .active {
@@ -39,6 +44,8 @@ const StyledFolders = styled.section`
     position: relative;
     z-index: -1;
 
+  
+
     div {
       display: flex;
       align-items: center;
@@ -50,6 +57,14 @@ const StyledFolders = styled.section`
         object-fit: none;
         transition: 0.4s;
       }
+
+      &:hover {
+      p {
+        opacity: 0.5;
+        transition: 0.5s;
+        cursor: pointer;
+      }
+    }
     }
   }
 
