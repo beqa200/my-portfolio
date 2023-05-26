@@ -22,4 +22,8 @@ const OrangeText = styled(PaleText)`
   color: #e99287;
 `;
 
-export { PaleText, WhiteText, GreenText, PurpleText, OrangeText };
+const PinkText = styled(PaleText)`
+color: #C98BDF;
+`
+
+export { PaleText, WhiteText, GreenText, PurpleText, OrangeText, PinkText };

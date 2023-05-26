@@ -15,6 +15,8 @@ const StyledInput = styled.input`
   &:focus {
     outline: 1px solid #607b96;
   }
+
+  
 `;
 
 const BigStyledInput = styled.textarea`
