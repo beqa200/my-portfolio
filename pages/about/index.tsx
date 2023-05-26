@@ -6,6 +6,7 @@ import StyledFolders from "@/styled-components/StyledFolders";
 import { useContext, useEffect, useState } from "react";
 import { MyContext } from "../_app";
 import StyledTabs from "@/styled-components/StyledTabs";
+import StyledButton from "@/styled-components/StyledButton";
 
 export default function about() {
   const [isInfo, setisInfo] = useState(true);
@@ -183,8 +184,7 @@ export default function about() {
                 />
               </PaleText>
             ))}
-          </StyledTabs>
-
+          </StyledTabs>{" "}
           <div className={isPersonal ? "active info" : "inactive info"}>
             <WhiteText>// info </WhiteText>{" "}
             <PaleText>
@@ -192,13 +192,41 @@ export default function about() {
             </PaleText>
             <PaleText>/* {context.data.personalInfo} */</PaleText>
           </div>
-
           <div className={isProffesional ? "active info" : "inactive info"}>
             <WhiteText>// info </WhiteText>{" "}
             <PaleText>
               / proffesional <br /> <br />
             </PaleText>
             <PaleText>/* {context.data.proffesionalInfo} */</PaleText>
+          </div>
+          <div className="second-section">
+            <Image
+              src={
+                isProffesional
+                  ? "/assets/githubprofile.png"
+                  : "/assets/lindinProfile.png"
+              }
+              width={800}
+              height={435}
+              alt=""
+              className={isProffesional ? "activity" : "activity1"}
+            />
+            <StyledButton>
+              {" "}
+              <a
+                href="./Beka_Maisuradze.pdf"
+                download
+                className="download-button"
+              >
+                Download CV
+              </a>{" "}
+              <Image
+                src={"/assets/download.svg"}
+                width={25}
+                height={25}
+                alt=""
+              />
+            </StyledButton>
           </div>
         </div>
       </StyledAbout>
@@ -269,7 +297,9 @@ const StyledAbout = styled.main`
       padding: 15px;
 
       @media (min-width: 1440px) {
-        width: 40%;
+        width: 50%;
+        height: calc(100% - 114px);
+        border-right: 1px solid #1e2d3d;
       }
 
       p {
@@ -278,10 +308,97 @@ const StyledAbout = styled.main`
     }
     .active {
       opacity: 1;
+      z-index: 9;
     }
 
     .inactive {
       opacity: 0;
+      z-index: -1;
+    }
+  }
+
+  .second-section {
+    width: 50%;
+    height: calc(95.8vh - 120px);
+    left: 50%;
+    position: relative;
+    display: none;
+
+    @media (min-width: 1440px) {
+      display: block;
+    }
+
+    @keyframes profileAnimation {
+      0% {
+        scale: 0;
+        opacity: 0;
+      }
+
+      100% {
+        scale: 1;
+        opacity: 1;
+      }
+    }
+
+    @keyframes profileAnimation1 {
+      0% {
+        scale: 0;
+        opacity: 0;
+      }
+
+      100% {
+        scale: 1;
+        opacity: 1;
+      }
+    }
+
+    .activity,
+    .activity1 {
+      width: 100%;
+      height: 55%;
+      border-radius: 0 0 30px 30px;
+      animation-duration: 1s;
+      animation-timing-function: ease;
+    }
+
+    .activity {
+      animation-name: profileAnimation;
+    }
+
+    .activity1 {
+      animation-name: profileAnimation1;
+    }
+
+    button {
+      font-size: 25px;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      bottom: 20%;
+
+      img {
+        margin-bottom: -5px;
+      }
+
+      @keyframes downloadAnimte {
+        20% {
+          margin-bottom: -10px;
+        }
+        50% {
+          margin-bottom: 5px;
+        }
+        100% {
+          margin-bottom: -5px;
+        }
+      }
+
+      &:hover {
+        img {
+          animation-name: downloadAnimte;
+          animation-duration: 1s;
+          animation-timing-function: ease;
+        }
+      }
     }
   }
 `;
