@@ -5,15 +5,15 @@ import StyledButton from "@/styled-components/StyledButton";
 export default function ProjectCard({ data }: { data: Project }) {
   return (
     <StyledProjectCard>
-      <img
-        width={200}
-        height={200}
+      <Image
+        width={500}
+        height={500}
         src={data.img}
         alt=""
         className="main-img"
       />
       <div className="wrapper">
-        <PaleText>{data.description}</PaleText>
+        <PaleText>{data.name}</PaleText>
         <div className="links">
           <StyledButton>
             <a href={data.liveLink}>view-project</a>
@@ -36,13 +36,26 @@ export default function ProjectCard({ data }: { data: Project }) {
 const StyledProjectCard = styled.div`
   background-color: #011221;
   border: 2px solid #1c2b3a;
-  width: 90%;
-  max-width: 370px;
+  width: 100%;
   border-radius: 15px;
+  animation-name: scaleUp;
+  animation-duration: 1s;
 
+  &:hover {
+    scale: 1.05;
+    transition: 1s;
+  }
+  @keyframes scaleUp {
+    0% {
+      scale: 0.2;
+    }
+    100% {
+      scale: 1;
+    }
+  }
   .main-img {
     width: 100%;
-
+    height: 200px;
     border-radius: 15px 15px 0px 0px;
   }
 
@@ -56,6 +69,20 @@ const StyledProjectCard = styled.div`
       img {
         width: 50px;
         height: 50px;
+
+        &:hover {
+          scale: 1.2;
+          transition: 1s;
+        }
+      }
+    }
+  }
+
+  button {
+    &:hover {
+      a {
+        color: #5565e8;
+        transition: 0.5s;
       }
     }
   }

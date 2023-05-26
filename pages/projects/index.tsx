@@ -10,6 +10,7 @@ import { useContext, useState } from "react";
 import Image from "next/image";
 import ProjectCard from "@/components/ProjectCard";
 import { MyContext } from "../_app";
+import StyledTabs from "@/styled-components/StyledTabs";
 
 export default function projects() {
   const [isProjects, setIsProjects] = useState(true);
@@ -67,6 +68,7 @@ export default function projects() {
                     <input
                       type="checkbox"
                       id={item}
+                      checked={techStaks.some((item1) => item1 === item)}
                       onClick={(event: any) => {
                         handleCheck(event.target.checked, item);
                       }}
@@ -80,37 +82,62 @@ export default function projects() {
         </div>
 
         <div className="main-content">
+          <StyledTabs className={techStaks.length >= 1 ? "tabs" : "tabs1"}>
+            {techStaks.map((item) => (
+              <PaleText
+                className={
+                  techStaks.some((item2) => item2 == item) ? "tabActive" : ""
+                }
+              >
+                {item}
+                <Image
+                  src={"/assets/delete.png"}
+                  width={9}
+                  height={9}
+                  alt="close"
+                  onClick={(event) => {
+                    event.stopPropagation();
+
+                    setTechStacks((tabs: string[]) =>
+                      techStaks.filter((item2) => item2 != item)
+                    );
+                  }}
+                />
+              </PaleText>
+            ))}
+          </StyledTabs>
           <div className="selected">
             <WhiteText>// projects </WhiteText>{" "}
             <PaleText>
               {techStaks.length != 0 && "/" + techStaks.join("; ")}
             </PaleText>
           </div>
-          {context.data.projects.map((item) => {
-            if (techStaks.length == 0) {
-              return (
-                <>
-                  <div className="project-heading">
-                    <PurpleText>Project {item.id}</PurpleText>{" "}
-                    <PaleText>/ {item.name}</PaleText>
-                  </div>
+          <div className="projects">
+            {context.data.projects.map((item) => {
+              if (techStaks.length == 0) {
+                return (
+                  <div>
+                    <div className="project-heading">
+                      <PurpleText>Project {item.id}</PurpleText>{" "}
+                     
+                    </div>
 
-                  <ProjectCard data={item} />
-                </>
-              );
-            } else if (areArraysEqual(item.teckstack, techStaks)) {
-              return (
-                <>
-                  <div className="project-heading">
-                    <PurpleText>Project {item.id}</PurpleText>{" "}
-                    <PaleText>/ {item.name}</PaleText>
+                    <ProjectCard data={item} />
                   </div>
+                );
+              } else if (areArraysEqual(item.teckstack, techStaks)) {
+                return (
+                  <div>
+                    <div className="project-heading">
+                      <PurpleText>Project {item.id}</PurpleText>{" "}
+                    </div>
 
-                  <ProjectCard data={item} />
-                </>
-              );
-            }
-          })}
+                    <ProjectCard data={item} />
+                  </div>
+                );
+              }
+            })}
+          </div>
         </div>
       </StyledProjects>
     </>
@@ -119,10 +146,39 @@ export default function projects() {
 
 const StyledProjects = styled.main`
   height: calc(95.8vh - 57px);
-  overflow: hidden;
-
+  overflow-y: auto;
+  
   @media (min-width: 1440px) {
     display: flex;
+    overflow: hidden;
+  }
+
+  @keyframes mainAnimate {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: 52px;
+    }
+  }
+
+  @keyframes mainAnimate1 {
+    0% {
+      height: 50px;
+    }
+    100% {
+      height: 0;
+    }
+  }
+
+  .tabs {
+    animation-name: mainAnimate;
+    animation-duration: 1s;
+  }
+
+  .tabs1 {
+    animation-name: mainAnimate1;
+    animation-duration: 1s;
   }
 
   .heading {
@@ -172,6 +228,10 @@ const StyledProjects = styled.main`
           font-weight: 200;
           font-size: 16px;
           color: white;
+
+          @media (min-width: 1440px) {
+            width: 200px;
+          }
         }
       }
     }
@@ -186,17 +246,43 @@ const StyledProjects = styled.main`
     flex-direction: column;
     align-items: center;
     margin-top: 30px;
+    width: 100%;
+    overflow-y: auto;
+    @media (min-width: 1440px) {
+      margin-top: 0;
+    }
 
     .selected {
       width: 100%;
       padding: 0 0 15px 15px;
+
+      @media (min-width: 1440px) {
+        display: none;
+      }
       p {
         display: inline;
       }
     }
-    .project-heading {
-      p {
-        display: inline;
+
+    .projects {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      padding: 15px;
+      width: 100%;
+      justify-content: space-evenly;
+      @media (min-width: 1440px) {
+        padding: 50px;
+      }
+      div {
+        width: 100%;
+        max-width: 370px;
+        .project-heading {
+          margin-bottom: 10px;
+          p {
+            display: inline;
+          }
+        }
       }
     }
   }

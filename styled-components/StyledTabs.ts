@@ -5,6 +5,7 @@ const StyledTabs = styled.div`
   border-bottom: 1px solid #1e2d3d;
   display: none;
 
+
   @media (min-width: 1440px) {
     display: flex;
   }

@@ -23,9 +23,27 @@
       "name": "task-management-app",
       "description": "website for adding tasks and subtasks",
       "teckstack": ["React", "Styled Components"],
-      "img": "/assets/projects/task-management.png",
+      "img": "/assets/projects/task-management-website.png",
       "liveLink": "https://task-management-website-ten.vercel.app/platform-launch",
       "githubLink": "https://github.com/beqa200/task-management-website"
+    },
+    {
+      "id": 2,
+      "name": "entertainment-web-app",
+      "description": "website for watching and saving favorite films",
+      "teckstack": ["Next", "Styled Components"],
+      "img": "/assets/projects/entertainment-web-app.png",
+      "liveLink": "https://entertainment-web-app-chi-cyan.vercel.app/",
+      "githubLink": "https://github.com/beqa200/entertainment-web-app"
+    },
+    {
+      "id": 3,
+      "name": "audiophile-ecommerce-website",
+      "description": "website for buying audio gadgets",
+      "teckstack": ["React", "Styled Components"],
+      "img": "/assets/projects/audiophile-ecommerce-website.png",
+      "liveLink": "https://audiophile-ecommerce-website-theta.vercel.app/",
+      "githubLink": "https://github.com/beqa200/audiophile-ecommerce-website"
     }
   ]
 }

@@ -7,6 +7,23 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
         font-family: 'Fira Code', sans-serif;
+
+        ::-webkit-scrollbar {
+      width: 11px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #1e2d3d;
+      transition: 0.5s;
+      outline: 1px solid #1c2b3a;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #011221;
+      border-radius: 5px;
+      transition: 0.5s;
+      width: 12px;
+    }
     }
 
     body {
@@ -26,6 +43,8 @@ const GlobalStyle = createGlobalStyle`
     button {
         cursor: pointer;
     }
+
+
 `;
 
 const GlobalWrapper = styled.div<{ menu: Boolean }>`
