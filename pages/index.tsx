@@ -109,6 +109,7 @@ const StyledHome = styled.main`
     padding-top: 10vh;
     animation-name: loadAnimateWrapper;
     animation-duration: 2s;
+
     .greeting {
       font-size: 18px;
       line-height: 24px;
@@ -143,6 +144,7 @@ const StyledHome = styled.main`
     bottom: 10%;
     animation-name: loadAnimateGithub;
     animation-duration: 2s;
+
     @media (min-width: 1440px) {
       bottom: 34%;
       padding-left: 10px;
@@ -152,6 +154,7 @@ const StyledHome = styled.main`
       margin-top: 16px;
       p {
         display: inline;
+
         @media (min-width: 1440px) {
           font-size: 20px;
         }
@@ -160,6 +163,7 @@ const StyledHome = styled.main`
         .navigate {
           text-decoration: underline;
           line-height: 20px;
+
           &:hover {
             font-size: 22px;
             transition: 0.5s;
@@ -171,6 +175,7 @@ const StyledHome = styled.main`
 
   .pattern {
     display: none;
+
     @media (min-width: 1440px) {
       display: block;
       position: absolute;

@@ -13,10 +13,10 @@ import { MyContext } from "../_app";
 import StyledTabs from "@/styled-components/StyledTabs";
 
 export default function projects() {
+  const context = useContext(MyContext);
+
   const [isProjects, setIsProjects] = useState(true);
   const [techStaks, setTechStacks] = useState<string[]>([]);
-
-  const context = useContext(MyContext);
 
   const handleCheck = (isChecked: boolean, item: string) => {
     if (isChecked) {
@@ -119,7 +119,6 @@ export default function projects() {
                   <div>
                     <div className="project-heading">
                       <PurpleText>Project {item.id}</PurpleText>{" "}
-                     
                     </div>
 
                     <ProjectCard data={item} />
@@ -147,13 +146,13 @@ export default function projects() {
 const StyledProjects = styled.main`
   height: calc(95.8vh - 57px);
   overflow-y: auto;
-  
+
   @media (min-width: 1440px) {
     display: flex;
     overflow: hidden;
   }
 
-  @keyframes mainAnimate {
+  @keyframes tabAnimateAppear {
     0% {
       height: 0;
     }
@@ -162,7 +161,7 @@ const StyledProjects = styled.main`
     }
   }
 
-  @keyframes mainAnimate1 {
+  @keyframes tabAnimateDisappear {
     0% {
       height: 50px;
     }
@@ -172,12 +171,12 @@ const StyledProjects = styled.main`
   }
 
   .tabs {
-    animation-name: mainAnimate;
+    animation-name: tabAnimateAppear;
     animation-duration: 1s;
   }
 
   .tabs1 {
-    animation-name: mainAnimate1;
+    animation-name: tabAnimateDisappear;
     animation-duration: 1s;
   }
 
@@ -195,6 +194,7 @@ const StyledProjects = styled.main`
       align-items: start;
       gap: 15px;
       transition: 1s;
+
       div {
         padding: 0;
         gap: 20px;
@@ -224,6 +224,7 @@ const StyledProjects = styled.main`
           background-position: center;
           background-color: #607b96;
         }
+
         label {
           font-weight: 200;
           font-size: 16px;
@@ -248,6 +249,7 @@ const StyledProjects = styled.main`
     margin-top: 30px;
     width: 100%;
     overflow-y: auto;
+
     @media (min-width: 1440px) {
       margin-top: 0;
     }
@@ -259,6 +261,7 @@ const StyledProjects = styled.main`
       @media (min-width: 1440px) {
         display: none;
       }
+
       p {
         display: inline;
       }
@@ -271,14 +274,18 @@ const StyledProjects = styled.main`
       padding: 15px;
       width: 100%;
       justify-content: space-evenly;
+
       @media (min-width: 1440px) {
         padding: 50px;
       }
+
       div {
         width: 100%;
         max-width: 370px;
+
         .project-heading {
           margin-bottom: 10px;
+
           p {
             display: inline;
           }

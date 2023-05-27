@@ -9,13 +9,14 @@ import StyledTabs from "@/styled-components/StyledTabs";
 import StyledButton from "@/styled-components/StyledButton";
 
 export default function about() {
+  const context = useContext(MyContext);
+
   const [isInfo, setisInfo] = useState(true);
   const [isContacts, setIsContacts] = useState(false);
   const [isPersonal, setisPersonal] = useState(true);
   const [isProffesional, setisProffesional] = useState(false);
   const [tabs, setTabs] = useState<string[]>(["personal"]);
-  const context = useContext(MyContext);
-  console.log(tabs);
+
   useEffect(() => {
     if (isProffesional && !tabs.some((item) => item == "proffesional")) {
       setTabs((tabs: string[]) => [...tabs, "proffesional"]);
@@ -39,6 +40,7 @@ export default function about() {
       setisPersonal(false);
     }
   };
+
   return (
     <>
       <Head>
@@ -236,44 +238,15 @@ export default function about() {
 
 const StyledAbout = styled.main`
   height: calc(95.8vh - 57px);
+
   @media (min-width: 1440px) {
     display: flex;
     overflow: hidden;
   }
 
-  @keyframes filesAppear {
-    0% {
-      opacity: 0;
-    }
-    50% {
-      margin-top: 0;
-    }
-    100% {
-      z-index: 1;
-      margin-top: 0;
-      opacity: 1;
-    }
-  }
-
-  @keyframes filesDisappear {
-    0% {
-      z-index: 1;
-      margin-top: 0px;
-      opacity: 1;
-    }
-    20% {
-      opacity: 0;
-    }
-    30% {
-      z-index: -1;
-    }
-    100% {
-      margin-top: -65px;
-    }
-  }
-
   .heading {
     padding: 20px;
+
     @media (min-width: 1440px) {
       border-right: 1px solid #1e2d3d;
     }
@@ -306,6 +279,7 @@ const StyledAbout = styled.main`
         display: inline;
       }
     }
+
     .active {
       opacity: 1;
       z-index: 9;
