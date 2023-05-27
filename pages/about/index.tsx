@@ -63,8 +63,8 @@ export default function about() {
               <Image
                 width={8.5}
                 height={6}
-                className="arrow"
-                src={"/assets/triangle.png"}
+                className={!isInfo ? "triangle" : ""}
+                src={"/assets/shared/triangle.png"}
                 alt="triangle"
               />
               <WhiteText>info</WhiteText>
@@ -79,14 +79,14 @@ export default function about() {
                   width={12.73}
                   height={7.78}
                   className="arrow"
-                  src={"/assets/arrow.png"}
+                  src={"/assets/shared/arrow.png"}
                   alt="arrow"
                 />
                 <Image
                   width={12.73}
                   height={7.78}
-                  src={"/assets/orange-folder.png"}
-                  alt="arrow"
+                  src={"/assets/shared/orange-folder.png"}
+                  alt="foler"
                 />
                 <WhiteText>personal</WhiteText>
               </div>
@@ -99,14 +99,14 @@ export default function about() {
                   width={12.73}
                   height={7.78}
                   className="arrow"
-                  src={"/assets/arrow.png"}
+                  src={"/assets/shared/arrow.png"}
                   alt="arrow"
                 />
                 <Image
                   width={12.73}
                   height={7.78}
-                  src={"/assets/green-folder.png"}
-                  alt="arrow"
+                  src={"/assets/shared/green-folder.png"}
+                  alt="folder"
                 />
                 <WhiteText>proffesional</WhiteText>
               </div>
@@ -121,8 +121,8 @@ export default function about() {
               <Image
                 width={8.5}
                 height={6}
-                className="arrow"
-                src={"/assets/triangle.png"}
+                className={!isContacts ? "triangle" : ""}
+                src={"/assets/shared/triangle.png"}
                 alt="triangle"
               />
               <WhiteText>contacts</WhiteText>
@@ -135,7 +135,7 @@ export default function about() {
                   width={12.73}
                   height={7.78}
                   src={"/assets/contact-icons/mail-icon.png"}
-                  alt="arrow"
+                  alt="mail icon"
                 />
                 <PaleText>beqamaisuradze912@gmail.com</PaleText>
               </div>
@@ -145,7 +145,7 @@ export default function about() {
                   width={12.73}
                   height={7.78}
                   src={"/assets/contact-icons/phone-icon.png"}
-                  alt="arrow"
+                  alt="phone icon"
                 />
                 <PaleText>+(995) 579 09 55 87</PaleText>
               </div>
@@ -159,7 +159,7 @@ export default function about() {
                 className={
                   tabs.some((item2) => item2 == item) ? "tabActive" : ""
                 }
-                key={Math.random()}
+                key={item}
                 onClick={() => {
                   if (item == "personal") {
                     clickPersonal();
@@ -170,7 +170,7 @@ export default function about() {
               >
                 {item}
                 <Image
-                  src={"/assets/delete.png"}
+                  src={"/assets/shared/delete.png"}
                   width={9}
                   height={9}
                   alt="close"
@@ -218,14 +218,14 @@ export default function about() {
             <StyledButton>
               {" "}
               <a
-                href="./Beka_Maisuradze.pdf"
+                href="./docs/Beka_Maisuradze.pdf"
                 download
                 className="download-button"
               >
                 Download CV
               </a>{" "}
               <Image
-                src={"/assets/download.svg"}
+                src={"/assets/shared/download.svg"}
                 width={25}
                 height={25}
                 alt=""
@@ -300,13 +300,16 @@ const StyledAbout = styled.main`
     position: relative;
     display: none;
     padding: 3% 2%;
+
     @media (min-width: 1440px) {
       display: block;
     }
+
     p {
       text-align: center;
       font-size: 34px;
     }
+
     .skillsWrapper {
       display: flex;
       flex-wrap: wrap;
@@ -314,23 +317,6 @@ const StyledAbout = styled.main`
       justify-content: center;
       gap: 40px 15%;
       margin-top: 5%;
-    }
-
-    .activity,
-    .activity1 {
-      width: 100%;
-      height: 55%;
-      border-radius: 0 0 30px 30px;
-      animation-duration: 1s;
-      animation-timing-function: ease;
-    }
-
-    .activity {
-      animation-name: profileAnimation;
-    }
-
-    .activity1 {
-      animation-name: profileAnimation1;
     }
 
     button {

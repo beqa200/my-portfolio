@@ -13,6 +13,7 @@ const StyledButton = styled.button`
     &:hover {
       color: #5565e8;
       transition: 0.5s;
+
       a {
         color: #5565e8;
         transition: 0.5s;

@@ -12,6 +12,7 @@ const StyledInput = styled.input`
   color: white;
   padding-left: 20px;
   margin-top: 7px;
+  
   &:focus {
     outline: 1px solid #607b96;
   }
@@ -33,6 +34,7 @@ const BigStyledInput = styled.textarea`
   padding: 20px;
   margin-top: 7px;
   resize: none;
+
   &:focus {
     outline: 1px solid #607b96;
     border-radius: 0.7rem;

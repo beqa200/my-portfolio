@@ -9,6 +9,7 @@ const PaleText = styled.p`
 const WhiteText = styled(PaleText)`
   color: #ffffff;
 `;
+
 const GreenText = styled(PaleText)`
   color: #43d9ad;
 `;
@@ -23,7 +24,7 @@ const OrangeText = styled(PaleText)`
 `;
 
 const PinkText = styled(PaleText)`
-color: #C98BDF;
-`
+  color: #c98bdf;
+`;
 
 export { PaleText, WhiteText, GreenText, PurpleText, OrangeText, PinkText };

@@ -16,20 +16,22 @@ export const MyContext = createContext<contextProps>({
     techStacks: [],
     social: [],
     projects: [],
-    skills: []
+    skills: [],
   },
 });
 
 export default function App({ Component, pageProps }: AppProps) {
   const [menu, setMenu] = useState<Boolean>(false);
- 
+
   return (
     <MyContext.Provider value={{ menu, setMenu, data }}>
       <GlobalWrapper menu={menu}>
         <GlobalStyle />
         <Header />
         <Component {...pageProps} />
-        <Desktop><Footer /></Desktop>
+        <Desktop>
+          <Footer />
+        </Desktop>
       </GlobalWrapper>
     </MyContext.Provider>
   );

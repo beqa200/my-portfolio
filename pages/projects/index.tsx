@@ -51,8 +51,8 @@ export default function projects() {
               <Image
                 width={8.5}
                 height={6}
-                className="arrow"
-                src={"/assets/triangle.png"}
+                className={!isProjects ? "triangle" : ""}
+                src={"/assets/shared/triangle.png"}
                 alt="triangle"
               />
               <WhiteText>TechStacks</WhiteText>
@@ -85,14 +85,14 @@ export default function projects() {
           <StyledTabs className={techStaks.length >= 1 ? "tabs" : "tabs1"}>
             {techStaks.map((item) => (
               <PaleText
-              key={item}
+                key={item}
                 className={
                   techStaks.some((item2) => item2 == item) ? "tabActive" : ""
                 }
               >
                 {item}
                 <Image
-                  src={"/assets/delete.png"}
+                  src={"/assets/shared/delete.png"}
                   width={9}
                   height={9}
                   alt="close"
@@ -220,7 +220,7 @@ const StyledProjects = styled.main`
         }
 
         input[type="checkbox"]:checked + label::before {
-          background-image: url("./assets/checked.png");
+          background-image: url("./assets/shared/checked.png");
           background-repeat: no-repeat;
           background-position: center;
           background-color: #607b96;
@@ -258,6 +258,7 @@ const StyledProjects = styled.main`
     .selected {
       width: 100%;
       padding: 0 0 15px 15px;
+      margin-top: 20px;
 
       @media (min-width: 1440px) {
         display: none;

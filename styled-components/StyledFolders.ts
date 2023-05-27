@@ -23,14 +23,17 @@ const StyledFolders = styled.section`
       transition: 0.4s;
     }
 
+    .triangle {
+      rotate: -90deg;
+    }
     &:hover {
       cursor: pointer;
-    
     }
   }
 
   .active {
     margin-left: 1px;
+
     .arrow {
       rotate: 90deg;
     }
@@ -44,27 +47,27 @@ const StyledFolders = styled.section`
     position: relative;
     z-index: -1;
 
-  
-
     div {
       display: flex;
       align-items: center;
       gap: 7px;
       padding: 5px 20px;
+      
       img {
         height: 15px;
         width: 16px;
         object-fit: none;
         transition: 0.4s;
+
       }
 
       &:hover {
-      p {
-        opacity: 0.5;
-        transition: 0.5s;
-        cursor: pointer;
+        p {
+          opacity: 0.5;
+          transition: 0.5s;
+          cursor: pointer;
+        }
       }
-    }
     }
   }
 

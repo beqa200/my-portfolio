@@ -5,6 +5,7 @@ import { MyContext } from "@/pages/_app";
 import { PaleText } from "@/styled-components/StyledTexts";
 export default function Footer() {
   const context = useContext(MyContext);
+  
   return (
     <StyledFooter className={context.menu ? "find-animate" : "find-animate2"}>
       <p className="find">find me in:</p>
@@ -62,14 +63,15 @@ const StyledFooter = styled.footer`
   overflow: hidden;
   background-color: #011627;
 
-  .find {
-    width: 120px;
-  }
-
   @media (min-width: 1440px) {
     justify-content: start;
     gap: 20px;
   }
+
+  .find {
+    width: 120px;
+  }
+
   .wrapper {
     display: flex;
 
@@ -77,6 +79,7 @@ const StyledFooter = styled.footer`
       justify-content: space-between;
       width: 92%;
     }
+
     a {
       border-left: 1px solid #1e2d3d;
       padding: 12px;
@@ -98,6 +101,7 @@ const StyledFooter = styled.footer`
 
       @media (min-width: 1440px) {
         padding-right: 0;
+
         p {
           display: block;
         }

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Image from "next/image";
-import { PaleText, WhiteText } from "@/styled-components/StyledTexts";
+import { PaleText } from "@/styled-components/StyledTexts";
 import StyledButton from "@/styled-components/StyledButton";
 export default function ProjectCard({ data }: { data: Project }) {
   return (
@@ -56,6 +56,7 @@ const StyledProjectCard = styled.div`
       scale: 1;
     }
   }
+
   .main-img {
     width: 100%;
     height: 200px;
@@ -69,6 +70,7 @@ const StyledProjectCard = styled.div`
       margin-top: 23px;
       display: flex;
       justify-content: space-between;
+
       img {
         width: 50px;
         height: 50px;

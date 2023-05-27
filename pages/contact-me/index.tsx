@@ -12,21 +12,22 @@ import {
 import Image from "next/image";
 import { BigStyledInput, StyledInput } from "@/styled-components/StyledInput";
 import StyledButton from "@/styled-components/StyledButton";
-import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import Head from "next/head";
 
 export default function index() {
   const context = useContext(MyContext);
+
   const [isContacts, setIsContacts] = useState(false);
   const [isFindMe, setIsFindMe] = useState(false);
   const [submit, setSubmit] = useState(false);
+
   const { register, handleSubmit, watch, setValue } = useForm<FormType>();
 
   const today = new Date();
   const date = today.toString().split(" ").slice(0, 3).join(" ");
 
   const onSubmit: SubmitHandler<FormType> = (data) => {
-    console.log(data);
     const formData = new FormData();
     formData.append("name", data.name);
     formData.append("email", data.email);
@@ -61,8 +62,8 @@ export default function index() {
               <Image
                 width={8.5}
                 height={6}
-                className="arrow"
-                src={"/assets/triangle.png"}
+                className={!isContacts ? "triangle" : ""}
+                src={"/assets/shared/triangle.png"}
                 alt="triangle"
               />
               <WhiteText>contacts</WhiteText>
@@ -100,8 +101,8 @@ export default function index() {
               <Image
                 width={8.5}
                 height={6}
-                className="arrow"
-                src={"/assets/triangle.png"}
+                className={!isFindMe ? "triangle" : ""}
+                src={"/assets/shared/triangle.png"}
                 alt="triangle"
               />
               <WhiteText>find-me-also-in</WhiteText>
@@ -115,7 +116,7 @@ export default function index() {
                     <Image
                       width={12.73}
                       height={7.78}
-                      src={"/assets/link.png"}
+                      src={"/assets/shared/link.png"}
                       alt="arrow"
                     />
                     <PaleText>{item.name}</PaleText>
@@ -231,6 +232,7 @@ export default function index() {
 const StyledContact = styled.main`
   height: calc(95.8vh - 57px);
   overflow: auto;
+
   @media (min-width: 1440px) {
     display: flex;
     overflow: hidden;
@@ -278,11 +280,15 @@ const StyledContact = styled.main`
   .main-content {
     width: 100%;
     display: flex;
+    margin-top: 20px;
     .wrapper {
       width: 100%;
+
       @media (min-width: 1440px) {
         width: 50%;
+        margin-top: 0;
       }
+
       form {
         position: relative;
         width: 100%;
@@ -303,7 +309,7 @@ const StyledContact = styled.main`
 
         @media (min-width: 1440px) {
           margin-top: 0;
-          padding: 60px 15%;
+          padding: 30px 15%;
           border-right: 1px solid #1e2d3d;
           animation-name: formAppear;
           animation-duration: 1s;
@@ -322,10 +328,11 @@ const StyledContact = styled.main`
     .code {
       width: 50%;
       gap: 25px;
-      padding: 140px 5%;
+      padding: 100px 5%;
       display: none;
       animation-name: codeAppear;
       animation-duration: 1s;
+
       @keyframes codeAppear {
         0% {
           opacity: 0;
@@ -336,9 +343,11 @@ const StyledContact = styled.main`
           scale: 1;
         }
       }
+
       @media (min-width: 1440px) {
         display: flex;
       }
+
       .lines {
         text-align: right;
       }

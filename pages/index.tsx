@@ -50,7 +50,7 @@ export default function Home() {
         <div className="pattern">
           {[0.5, 1, 0.5].map((item) => (
             <Image
-              src={"/assets/code-snippet-no-opacity.svg"}
+              src={"/assets/shared/code-snippet-no-opacity.svg"}
               style={{ opacity: item }}
               width={560}
               height={182}

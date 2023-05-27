@@ -1,5 +1,4 @@
 import { MyContext } from "@/pages/_app";
-import Image from "next/image";
 import Link from "next/link";
 import { useContext } from "react";
 import styled from "styled-components";

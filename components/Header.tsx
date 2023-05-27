@@ -21,7 +21,7 @@ export default function Header() {
         }
         width={16}
         height={16}
-        src={!context.menu ? "/assets/hamburger.png" : "/assets/delete.png"}
+        src={!context.menu ? "/assets/shared/hamburger.png" : "/assets/shared/delete.png"}
         alt="menu"
         onClick={() => context.setMenu(!context.menu)}
       />

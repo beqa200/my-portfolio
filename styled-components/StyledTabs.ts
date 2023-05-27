@@ -5,7 +5,6 @@ const StyledTabs = styled.div`
   border-bottom: 1px solid #1e2d3d;
   display: none;
 
-
   @media (min-width: 1440px) {
     display: flex;
   }
@@ -23,7 +22,7 @@ const StyledTabs = styled.div`
 
   @keyframes identifier2 {
     0% {
-      argin-left: 0px;
+      margin-left: 0px;
     }
     100% {
       margin-left: -100px;
@@ -37,14 +36,16 @@ const StyledTabs = styled.div`
       width: 0;
     }
     100% {
-      width: 100%
+      width: 100%;
     }
   }
+
   p {
     padding: 15px;
     border-right: 1px solid #1e2d3d;
     cursor: pointer;
     position: relative;
+
     &:hover::before {
       content: "";
       position: absolute;
