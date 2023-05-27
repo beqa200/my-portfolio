@@ -95,7 +95,7 @@ const StyledHome = styled.main`
   }
 
   @media (min-width: 1440px) {
-    background-image: url("./assets/bg-main-desktop.png");
+    background-image: url("./assets/shared/bg-main-desktop.png");
     background-position: top -240px left 200px;
     padding-left: 5%;
     padding-top: 100px;
