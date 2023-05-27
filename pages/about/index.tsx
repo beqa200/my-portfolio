@@ -1,4 +1,8 @@
-import { PaleText, WhiteText } from "@/styled-components/StyledTexts";
+import {
+  PaleText,
+  PurpleText,
+  WhiteText,
+} from "@/styled-components/StyledTexts";
 import Head from "next/head";
 import styled from "styled-components";
 import Image from "next/image";
@@ -202,17 +206,14 @@ export default function about() {
             <PaleText>/* {context.data.proffesionalInfo} */</PaleText>
           </div>
           <div className="second-section">
-            <Image
-              src={
-                isProffesional
-                  ? "/assets/githubprofile.png"
-                  : "/assets/lindinProfile.png"
-              }
-              width={800}
-              height={435}
-              alt=""
-              className={isProffesional ? "activity" : "activity1"}
-            />
+            <PurpleText>Skills</PurpleText>
+            <div className="skillsWrapper">
+              {context.data.skills.map((item) => (
+                <StyledSkill name={item.name}>
+                  <Image src={item.logo} width={200} height={200} alt="" />
+                </StyledSkill>
+              ))}
+            </div>
             <StyledButton>
               {" "}
               <a
@@ -297,32 +298,44 @@ const StyledAbout = styled.main`
     left: 50%;
     position: relative;
     display: none;
-
+    padding: 3% 2%;
     @media (min-width: 1440px) {
       display: block;
     }
-
-    @keyframes profileAnimation {
-      0% {
-        scale: 0;
-        opacity: 0;
-      }
-
-      100% {
-        scale: 1;
-        opacity: 1;
-      }
+    p {
+      text-align: center;
+      font-size: 34px;
     }
+    .skillsWrapper {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: start;
+      justify-content: center;
+      gap: 40px 15%;
+      margin-top: 5%;
 
-    @keyframes profileAnimation1 {
-      0% {
-        scale: 0;
-        opacity: 0;
+      @keyframes imgAnimation {
+        0% {
+          transform: scale(0.8);
+        }
+
+        50% {
+          transform: scale(1);
+        }
+
+        100% {
+          transform: scale(0.8);
+        }
       }
 
-      100% {
-        scale: 1;
-        opacity: 1;
+      @keyframes imgAnimationHover {
+        0% {
+          transform: rotateY(0deg);
+        }
+
+        100% {
+          transform: rotateY(180deg);
+        }
       }
     }
 
@@ -348,7 +361,7 @@ const StyledAbout = styled.main`
       position: absolute;
       left: 50%;
       transform: translate(-50%, -50%);
-      bottom: 20%;
+      bottom: 10%;
 
       img {
         margin-bottom: -5px;
@@ -373,6 +386,35 @@ const StyledAbout = styled.main`
           animation-timing-function: ease;
         }
       }
+    }
+  }
+`;
+
+const StyledSkill = styled.div<{name: string}>`
+  width: 10.5%;
+  height: 10.5%;
+  position: relative;
+  
+  &:hover::before {
+    content: "${({name}) => name}";
+    font-size: 12px;
+    color: #43d9ad;
+    transition: 1s;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+   
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    animation: imgAnimation 3s infinite;
+
+    &:hover {
+      animation: imgAnimationHover 1s forwards;
     }
   }
 `;

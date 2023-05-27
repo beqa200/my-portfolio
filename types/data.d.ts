@@ -5,6 +5,7 @@ interface Data {
   techStacks: string[];
   social: Social[];
   projects: Project[];
+  skills: Skill[];
 }
 
 interface Project {
@@ -18,6 +19,11 @@ interface Project {
 }
 
 interface Social {
-  name: string,
-  link: string
+  name: string;
+  link: string;
+}
+
+interface Skill {
+  name: string;
+  logo: string;
 }
