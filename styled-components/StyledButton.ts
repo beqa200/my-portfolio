@@ -8,7 +8,17 @@ const StyledButton = styled.button`
   font-weight: 250;
   font-size: 16px;
   color: #ffffff;
-  
+
+  @media (min-width: 1440px) {
+    &:hover {
+      color: #5565e8;
+      transition: 0.5s;
+      a {
+        color: #5565e8;
+        transition: 0.5s;
+      }
+    }
+  }
 `;
 
 export default StyledButton;

@@ -159,6 +159,7 @@ export default function about() {
                 className={
                   tabs.some((item2) => item2 == item) ? "tabActive" : ""
                 }
+                key={Math.random()}
                 onClick={() => {
                   if (item == "personal") {
                     clickPersonal();
@@ -209,7 +210,7 @@ export default function about() {
             <PurpleText>Skills</PurpleText>
             <div className="skillsWrapper">
               {context.data.skills.map((item) => (
-                <StyledSkill name={item.name}>
+                <StyledSkill name={item.name} key={Math.random()}>
                   <Image src={item.logo} width={200} height={200} alt="" />
                 </StyledSkill>
               ))}
@@ -283,7 +284,7 @@ const StyledAbout = styled.main`
 
     .active {
       opacity: 1;
-      z-index: 9;
+      z-index: 8;
     }
 
     .inactive {
@@ -313,30 +314,6 @@ const StyledAbout = styled.main`
       justify-content: center;
       gap: 40px 15%;
       margin-top: 5%;
-
-      @keyframes imgAnimation {
-        0% {
-          transform: scale(0.8);
-        }
-
-        50% {
-          transform: scale(1);
-        }
-
-        100% {
-          transform: scale(0.8);
-        }
-      }
-
-      @keyframes imgAnimationHover {
-        0% {
-          transform: rotateY(0deg);
-        }
-
-        100% {
-          transform: rotateY(180deg);
-        }
-      }
     }
 
     .activity,
@@ -390,13 +367,37 @@ const StyledAbout = styled.main`
   }
 `;
 
-const StyledSkill = styled.div<{name: string}>`
+const StyledSkill = styled.div<{ name: string }>`
   width: 10.5%;
   height: 10.5%;
   position: relative;
-  
+
+  @keyframes imgAnimation {
+    0% {
+      transform: scale(0.7);
+    }
+
+    50% {
+      transform: scale(1);
+    }
+
+    100% {
+      transform: scale(0.7);
+    }
+  }
+
+  @keyframes imgAnimationHover {
+    0% {
+      transform: rotateY(0deg);
+    }
+
+    100% {
+      transform: rotateY(360deg);
+    }
+  }
+
   &:hover::before {
-    content: "${({name}) => name}";
+    content: "${({ name }) => name}";
     font-size: 12px;
     color: #43d9ad;
     transition: 1s;
@@ -405,7 +406,6 @@ const StyledSkill = styled.div<{name: string}>`
     left: 50%;
     text-align: center;
     transform: translate(-50%, -50%);
-   
   }
 
   img {
@@ -414,7 +414,7 @@ const StyledSkill = styled.div<{name: string}>`
     animation: imgAnimation 3s infinite;
 
     &:hover {
-      animation: imgAnimationHover 1s forwards;
+      animation: imgAnimationHover 1.5s forwards;
     }
   }
 `;

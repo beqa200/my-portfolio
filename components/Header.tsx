@@ -28,32 +28,27 @@ export default function Header() {
 
       <nav>
         <div className="flex-wrapper">
-          <StyledLink
-            href="/"
-            className={path == "/" ? "active" : ""}
-            isActive={path == "/"}
-          >
+          <StyledLink href="/" className={path == "/" ? "active" : "inActive"}>
             <PaleText>_hello</PaleText>
           </StyledLink>
           <StyledLink
             href="/about"
-            className={path == "/about" ? "active" : ""}
-            isActive={path == "/about"}
+            className={path == "/about" ? "active" : "inActive"}
           >
             <PaleText>_about_me</PaleText>
           </StyledLink>
           <StyledLink
             href="/projects"
-            className={path == "/projects" ? "active" : ""}
-            isActive={path == "/projects"}
+            className={path == "/projects" ? "active" : "inActive"}
           >
             <PaleText>_projects</PaleText>
           </StyledLink>
         </div>
         <StyledLink
           href="/contact-me"
-          className={path == "/contact-me" ? "contact active" : "contact"}
-          isActive={path == "/contact-me"}
+          className={
+            path == "/contact-me" ? "contact active" : "contact inActive"
+          }
         >
           <PaleText>_contact-me</PaleText>
         </StyledLink>
@@ -160,8 +155,6 @@ const StyledHeader = styled.header`
   nav {
     display: none;
 
-
-    
     @media (min-width: 1440px) {
       display: flex;
       width: 85%;
@@ -173,33 +166,33 @@ const StyledHeader = styled.header`
       }
     }
   }
+
+  .active {
+    border-bottom: 3px solid #fea55f;
+    animation-name: borderActive;
+    animation-duration: 1s;
+  }
+  .inActive {
+    &:hover {
+      opacity: 0.5;
+      scale: 0.9;
+      transition: 1s;
+    }
+  }
 `;
 
-const StyledLink = styled(Link)<{ isActive: Boolean }>`
+const StyledLink = styled(Link)`
   border-left: 1px solid #1e2d3d;
-
   padding: 16px 30px;
 
-  
   @keyframes borderActive {
-      0% {
-        opacity: 0.5;
-        scale: 0.9
-      }
-      100% {
-        opacity: 1;
-        scale: 1;
-      }
+    0% {
+      opacity: 0.5;
+      scale: 0.9;
     }
-
-  ${({ isActive }) =>
-    isActive
-      ? `border-bottom: 3px solid #fea55f;
-      animation-name: borderActive;
-      animation-duration: 1s`
-      : `&:hover {
-       opacity: 0.5;
-       scale: 0.9;
-      transition: 1s;
-      }`}
+    100% {
+      opacity: 1;
+      scale: 1;
+    }
+  }
 `;

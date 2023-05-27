@@ -41,10 +41,13 @@ const StyledProjectCard = styled.div`
   animation-name: scaleUp;
   animation-duration: 1s;
 
-  &:hover {
-    scale: 1.05;
-    transition: 1s;
+  @media (min-width: 1440px) {
+    &:hover {
+      scale: 1.05;
+      transition: 1s;
+    }
   }
+
   @keyframes scaleUp {
     0% {
       scale: 0.2;
@@ -70,19 +73,12 @@ const StyledProjectCard = styled.div`
         width: 50px;
         height: 50px;
 
-        &:hover {
-          scale: 1.2;
-          transition: 1s;
+        @media (min-width: 1440px) {
+          &:hover {
+            scale: 1.2;
+            transition: 1s;
+          }
         }
-      }
-    }
-  }
-
-  button {
-    &:hover {
-      a {
-        color: #5565e8;
-        transition: 0.5s;
       }
     }
   }

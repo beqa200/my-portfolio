@@ -64,12 +64,12 @@ export default function projects() {
                 className={isProjects ? "wrapper" : "wrapper active3-reverse"}
               >
                 {context.data.techStacks.map((item) => (
-                  <div>
+                  <div key={Math.random()}>
                     <input
                       type="checkbox"
                       id={item}
                       checked={techStaks.some((item1) => item1 === item)}
-                      onClick={(event: any) => {
+                      onChange={(event: any) => {
                         handleCheck(event.target.checked, item);
                       }}
                     />
@@ -85,6 +85,7 @@ export default function projects() {
           <StyledTabs className={techStaks.length >= 1 ? "tabs" : "tabs1"}>
             {techStaks.map((item) => (
               <PaleText
+              key={item}
                 className={
                   techStaks.some((item2) => item2 == item) ? "tabActive" : ""
                 }
@@ -116,7 +117,7 @@ export default function projects() {
             {context.data.projects.map((item) => {
               if (techStaks.length == 0) {
                 return (
-                  <div>
+                  <div key={Math.random()}>
                     <div className="project-heading">
                       <PurpleText>Project {item.id}</PurpleText>{" "}
                     </div>
@@ -126,7 +127,7 @@ export default function projects() {
                 );
               } else if (areArraysEqual(item.teckstack, techStaks)) {
                 return (
-                  <div>
+                  <div key={Math.random()}>
                     <div className="project-heading">
                       <PurpleText>Project {item.id}</PurpleText>{" "}
                     </div>
@@ -274,9 +275,9 @@ const StyledProjects = styled.main`
       padding: 15px;
       width: 100%;
       justify-content: space-evenly;
-
       @media (min-width: 1440px) {
         padding: 50px;
+        margin-bottom: 30px;
       }
 
       div {
