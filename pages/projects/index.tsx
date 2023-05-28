@@ -164,10 +164,10 @@ const StyledProjects = styled.main`
 
   @keyframes tabAnimateDisappear {
     0% {
-      height: 50px;
+      min-height: 52px;
     }
     100% {
-      height: 0;
+      min-height: 0;
     }
   }
 
