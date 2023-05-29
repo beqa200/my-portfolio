@@ -112,9 +112,10 @@ const StyledProjectCard = styled.div`
     height: 200px;
     background-color: black;
     opacity: 0.7;
+    border-radius: 15px 15px 0px 0px;
   }
   .hover {
-    @keyframes imgAnimationHover {
+    @keyframes imgAnimation {
     0% {
       scale: 0.6;
     }
@@ -139,7 +140,7 @@ const StyledProjectCard = styled.div`
     align-items: center;
     img {
       width: 50px;
-      animation: imgAnimationHover infinite 2s;
+      animation: imgAnimation infinite 2s;
       
     }
   }

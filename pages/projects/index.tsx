@@ -272,7 +272,7 @@ const StyledProjects = styled.main`
     .projects {
       display: flex;
       flex-wrap: wrap;
-      gap: 25px;
+      gap: 45px 25px;
       padding: 15px;
       width: 100%;
       justify-content: space-evenly;

@@ -4,6 +4,7 @@
   "proffesionalInfo": "Nullam mollis nulla sed sem sollicitudin luctus. Suspendisse volutpat consequat mi nec viverra. Cras rutrum eros a sem pulvinar tincidunt. Curabitur diam nunc, molestie non justo vitae, vestibulum facilisis ex. Duis tristique sollicitudin ultricies. Vivamus ornare quis arcu id ullamcorper. Nullam dapibus, sem ut fringilla lobortis, tellus nulla suscipit risus, vel hendrerit metus sem eget erat. In sit amet enim pellentesque, tincidunt odio nec, viverra ipsum. Sed turpis risus, ornare eu gravida lacinia, malesuada in erat.",
   "techStacks": [
     "React",
+    "Javascript",
     "Typescript",
     "Next",
     "Tailwind CSS",
@@ -14,7 +15,7 @@
   "skills": [
     { "name": "HTML", "logo": "/assets/skills/html.png" },
     { "name": "CSS", "logo": "/assets/skills/css-3.png" },
-    { "name": "Tailwind", "logo": "/assets/skills/tailwind.png" },
+    { "name": "Tailwind CSS", "logo": "/assets/skills/tailwind.png" },
     { "name": "React", "logo": "/assets/skills/reactLogo.png" },
     {
       "name": "Styled Components",
@@ -54,7 +55,7 @@
     {
       "id": 2,
       "name": "entertainment-web-app",
-      "teckstack": ["Next", "Styled Components", "Typescript"],
+      "teckstack": ["Next", "Styled Components", "Typescript", "MongoDB"],
       "img": "/assets/projects/entertainment-web-app.png",
       "liveLink": "https://entertainment-web-app-chi-cyan.vercel.app/",
       "githubLink": "https://github.com/beqa200/entertainment-web-app"
@@ -74,6 +75,62 @@
       "img": "/assets/projects/cv-generator-redberry.png",
       "liveLink": "https://cv-generator-redberry.vercel.app/",
       "githubLink": "https://github.com/beqa200/cv-generator-redberry"
+    },
+    {
+      "id": 5,
+      "name": "job-listing-api",
+      "teckstack": ["Node", "MongoDB", "Typescript"],
+      "img": "/assets/projects/job-listing-front.png",
+      "liveLink": "https://github.com/beqa200/job-listing-api",
+      "githubLink": "https://github.com/beqa200/job-listing-api"
+    },
+    {
+      "id": 6,
+      "name": "ecommerce-product-page",
+      "teckstack": ["React", "Typescript", "Styled Components"],
+      "img": "/assets/projects/ecommerce-product-page.png",
+      "liveLink": "https://ecommerce-product-page-beqa200.vercel.app/",
+      "githubLink": "https://github.com/beqa200/ecommerce-product-page"
+    },
+    {
+      "id": 7,
+      "name": "todo-app",
+      "teckstack": ["React", "Typescript", "Styled Components"],
+      "img": "/assets/projects/todo-app.png",
+      "liveLink": "https://todo-app-delta-orpin.vercel.app/",
+      "githubLink": "https://github.com/beqa200/todo-app"
+    },
+    {
+      "id": 8,
+      "name": "github-user-search",
+      "teckstack": ["React", "Javascript", "Styled Components", "Rest API"],
+      "img": "/assets/projects/github-user-search.png",
+      "liveLink": "https://github-user-search-ashy.vercel.app/",
+      "githubLink": "https://github.com/beqa200/github-user-search"
+    },
+    {
+      "id": 9,
+      "name": "interactive-credit-card-details-form",
+      "teckstack": ["React", "Typescript", "Styled Components"],
+      "img": "/assets/projects/interactive-credit-card-details-form.png",
+      "liveLink": "https://interactive-credit-card-details-form-git-main-beqa200.vercel.app/",
+      "githubLink": "https://github.com/beqa200/interactive-credit-card-details-form"
+    },
+    {
+      "id": 10,
+      "name": "interactive-pricing-component",
+      "teckstack": ["Javascript", "Tailwind CSS"],
+      "img": "/assets/projects/interactive-pricing-component.png",
+      "liveLink": "https://interactive-credit-card-details-form-git-main-beqa200.vercel.app/",
+      "githubLink": "https://github.com/beqa200/interactive-credit-card-details-form"
+    },
+    {
+      "id": 11,
+      "name": "tip-calculator-app",
+      "teckstack": ["React", "Javascript", "Styled Components"],
+      "img": "/assets/projects/tip-calculator-app.png",
+      "liveLink": "https://tip-calculator-app-react-orcin.vercel.app/",
+      "githubLink": "https://github.com/beqa200/tip-calculator-app-react"
     }
   ]
 }
