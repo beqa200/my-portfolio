@@ -27,7 +27,7 @@
     { "name": "Node", "logo": "/assets/skills/node.png" },
     { "name": "MongoDB", "logo": "/assets/skills/mongo.webp" },
     { "name": "Git", "logo": "/assets/skills/git.png" },
-    {"name": "Rest API", "logo": "/assets/skills/icons8-rest-api-96.png"}
+    { "name": "Rest API", "logo": "/assets/skills/icons8-rest-api-96.png" }
   ],
   "social": [
     {
@@ -131,6 +131,46 @@
       "img": "/assets/projects/tip-calculator-app.png",
       "liveLink": "https://tip-calculator-app-react-orcin.vercel.app/",
       "githubLink": "https://github.com/beqa200/tip-calculator-app-react"
+    },
+    {
+      "id": 12,
+      "name": "tic-tac-toe",
+      "teckstack": ["Javascript"],
+      "img": "/assets/projects/tic-tac-toe.png",
+      "liveLink": "https://beqa200.github.io/tic-tac-toe/",
+      "githubLink": "https://github.com/beqa200/tic-tac-toe"
+    },
+    {
+      "id": 13,
+      "name": "single-page-design-portfolio",
+      "teckstack": ["Javascript", "Tailwind CSS"],
+      "img": "/assets/projects/single-page-design-portfolio.png",
+      "liveLink": "https://beqa200.github.io/single-page-design-portfolio/",
+      "githubLink": "https://github.com/beqa200/single-page-design-portfolio"
+    },
+    {
+      "id": 14,
+      "name": "faq-accordion-card",
+      "teckstack": ["Javascript"],
+      "img": "/assets/projects/faq-accordion-card.png",
+      "liveLink": "https://faq-accordion-card-lilac-five.vercel.app/",
+      "githubLink": "https://github.com/beqa200/faq-accordion-card"
+    },
+    {
+      "id": 15,
+      "name": "art-gallery",
+      "teckstack": [],
+      "img": "/assets/projects/art-gallery.png",
+      "liveLink": "https://beqa200.github.io/art-gallery/",
+      "githubLink": "https://github.com/beqa200/art-gallery"
+    },
+    {
+      "id": 16,
+      "name": "interactive-rating-component",
+      "teckstack": ["React", "Javascript", "Styled Components"],
+      "img": "/assets/projects/interactive-rating-component.png",
+      "liveLink": "https://interactive-rating-component-beqa200.vercel.app/",
+      "githubLink": "https://github.com/beqa200/interactive-rating-component"
     }
   ]
 }

@@ -11,6 +11,7 @@ import Image from "next/image";
 import ProjectCard from "@/components/ProjectCard";
 import { MyContext } from "../_app";
 import StyledTabs from "@/styled-components/StyledTabs";
+import StyledButton from "@/styled-components/StyledButton";
 
 export default function projects() {
   const context = useContext(MyContext);
@@ -137,6 +138,13 @@ export default function projects() {
                 );
               }
             })}
+            <a
+              className="more"
+              href="https://github.com/beqa200?tab=repositories"
+              target="_blank"
+            >
+              <StyledButton>SEE MORE ON GITHUB</StyledButton>
+            </a>
           </div>
         </div>
       </StyledProjects>
@@ -249,10 +257,11 @@ const StyledProjects = styled.main`
     align-items: center;
     margin-top: 30px;
     width: 100%;
-    overflow-y: auto;
+    overflow-y: hidden;
 
     @media (min-width: 1440px) {
       margin-top: 0;
+      overflow-y: auto;
     }
 
     .selected {
@@ -276,9 +285,10 @@ const StyledProjects = styled.main`
       padding: 15px;
       width: 100%;
       justify-content: space-evenly;
+      position: relative;
       @media (min-width: 1440px) {
         padding: 50px;
-        margin-bottom: 30px;
+        margin-bottom: 140px;
       }
 
       div {
@@ -291,6 +301,23 @@ const StyledProjects = styled.main`
           p {
             display: inline;
           }
+        }
+      }
+    }
+
+    .more {
+      position: absolute;
+      bottom: -50px;
+
+      button {
+        background-color: #5565e8;
+        color: #011627;
+
+        font-weight: 800;
+        &:hover {
+          scale: 1.1;
+          background-color: #011627;
+          color: #5565e8;
         }
       }
     }
