@@ -21,19 +21,21 @@ export default function index() {
   const [isContacts, setIsContacts] = useState(false);
   const [isFindMe, setIsFindMe] = useState(false);
   const [submit, setSubmit] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const { register, handleSubmit, watch, setValue } = useForm<FormType>();
 
   const today = new Date();
   const date = today.toString().split(" ").slice(0, 3).join(" ");
 
-  const onSubmit: SubmitHandler<FormType> = (data) => {
+  const onSubmit: SubmitHandler<FormType> = async (data) => {
     const formData = new FormData();
     formData.append("name", data.name);
     formData.append("email", data.email);
     formData.append("message", data.message);
+    setLoading(true);
 
-    fetch("/api/sendMail", {
+    const response = await fetch("/api/sendMail", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -43,16 +45,14 @@ export default function index() {
         email: formData.get("email"),
         message: formData.get("message"),
       }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Response:", data);
-      })
-      .catch((error) => {
-        console.log("Error:", error.message);
-      });
+    });
 
-    setSubmit(true);
+    if (response.status == 200) {
+      setSubmit(true);
+      setLoading(false);
+    } else {
+      setLoading(false);
+    }
   };
 
   const newMessage = () => {
@@ -147,38 +147,42 @@ export default function index() {
         </div>
         <div className="main-content">
           <div className="wrapper">
-            {!submit ? (
-              <form onSubmit={handleSubmit(onSubmit)}>
-                <div>
-                  <PaleText>_name:</PaleText>
-                  <StyledInput {...register("name", { required: true })} />
-                </div>
+            {submit ? (
+               <StyledThanks>
+               <WhiteText className="heading2">Thank you! 🤘</WhiteText>{" "}
+               <PaleText className="text">
+                 Your message has been accepted. You will recieve answer really
+                 soon!
+               </PaleText>
+               <StyledButton onClick={() => newMessage()}>
+                 send-new-message
+               </StyledButton>
+             </StyledThanks>
 
-                <div>
-                  <PaleText>_email:</PaleText>
-                  <StyledInput {...register("email", { required: true })} />
-                </div>
-
-                <div>
-                  <PaleText>_message:</PaleText>
-                  <BigStyledInput
-                    {...register("message", { required: true })}
-                  />
-                </div>
-                <StyledButton>submit-message</StyledButton>
-              </form>
-            ) : (
-              <StyledThanks>
-                <WhiteText className="heading2">Thank you! 🤘</WhiteText>{" "}
-                <PaleText className="text">
-                  Your message has been accepted. You will recieve answer really
-                  soon!
-                </PaleText>
-                <StyledButton onClick={() => newMessage()}>
-                  send-new-message
-                </StyledButton>
-              </StyledThanks>
-            )}
+              
+              ) : (
+                !loading ? (
+                  <form onSubmit={handleSubmit(onSubmit)}>
+                    <div>
+                      <PaleText>_name:</PaleText>
+                      <StyledInput {...register("name", { required: true })} />
+                    </div>
+  
+                    <div>
+                      <PaleText>_email:</PaleText>
+                      <StyledInput {...register("email", { required: true })} />
+                    </div>
+  
+                    <div>
+                      <PaleText>_message:</PaleText>
+                      <BigStyledInput
+                        {...register("message", { required: true })}
+                      />
+                    </div>
+                    <StyledButton>submit-message</StyledButton>
+                  </form>) : <Loading />
+              )}
+           
           </div>
           <div className="code">
             <PaleText className="lines">
@@ -300,12 +304,14 @@ const StyledContact = styled.main`
     width: 100%;
     display: flex;
     margin-top: 20px;
+    @media (min-width: 1440px) {
+      margin-top: 0;
+    }
     .wrapper {
       width: 100%;
 
       @media (min-width: 1440px) {
         width: 50%;
-        margin-top: 0;
       }
 
       form {
@@ -329,7 +335,6 @@ const StyledContact = styled.main`
         @media (min-width: 1440px) {
           margin-top: 0;
           padding: 30px 15%;
-          border-right: 1px solid #1e2d3d;
           animation-name: formAppear;
           animation-duration: 1s;
         }
@@ -351,7 +356,7 @@ const StyledContact = styled.main`
       display: none;
       animation-name: codeAppear;
       animation-duration: 1s;
-
+      border-left: 1px solid #1e2d3d;
       @keyframes codeAppear {
         0% {
           opacity: 0;
@@ -386,7 +391,6 @@ const StyledThanks = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-  border-right: 1px solid #1e2d3d;
   padding: 60px 10%;
 
   .heading2 {
@@ -401,5 +405,26 @@ const StyledThanks = styled.div`
   .text {
     text-align: center;
     padding: 20px;
+  }
+`;
+
+const Loading = styled.div`
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  margin-top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 4px solid #607b96;
+  border-top: 4px solid #011221;
+  animation: spin 1s linear infinite;
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 `;
