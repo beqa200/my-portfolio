@@ -33,6 +33,25 @@ export default function index() {
     formData.append("email", data.email);
     formData.append("message", data.message);
 
+    fetch("/api/sendMail", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: formData.get("name"),
+        email: formData.get("email"),
+        message: formData.get("message"),
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Response:", data);
+      })
+      .catch((error) => {
+        console.log("Error:", error.message);
+      });
+
     setSubmit(true);
   };
 
