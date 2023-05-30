@@ -22,7 +22,7 @@ export default function index() {
   const [isFindMe, setIsFindMe] = useState(false);
   const [submit, setSubmit] = useState(false);
   const [loading, setLoading] = useState(false);
-
+  const [emailError, setEmailError] = useState(false);
   const { register, handleSubmit, watch, setValue } = useForm<FormType>();
 
   const today = new Date();
@@ -52,11 +52,13 @@ export default function index() {
       setLoading(false);
     } else {
       setLoading(false);
+      setEmailError(true);
     }
   };
 
   const newMessage = () => {
     setSubmit(false);
+    setEmailError(false);
     setValue("name", "");
     setValue("email", "");
     setValue("message", "");
@@ -167,7 +169,11 @@ export default function index() {
 
                 <div>
                   <PaleText>_email:</PaleText>
-                  <StyledInput {...register("email", { required: true })} />
+                  <StyledInput
+                    {...register("email", { required: true })}
+                    style={emailError ? { outline: "1px solid #991814" } : {}}
+                    onChange={() => setEmailError(false)}
+                  />
                 </div>
 
                 <div>
