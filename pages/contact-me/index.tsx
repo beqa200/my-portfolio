@@ -148,41 +148,39 @@ export default function index() {
         <div className="main-content">
           <div className="wrapper">
             {submit ? (
-               <StyledThanks>
-               <WhiteText className="heading2">Thank you! 🤘</WhiteText>{" "}
-               <PaleText className="text">
-                 Your message has been accepted. You will recieve answer really
-                 soon!
-               </PaleText>
-               <StyledButton onClick={() => newMessage()}>
-                 send-new-message
-               </StyledButton>
-             </StyledThanks>
+              <StyledThanks>
+                <WhiteText className="heading2">Thank you! 🤘</WhiteText>{" "}
+                <PaleText className="text">
+                  Your message has been accepted. You will recieve answer really
+                  soon!
+                </PaleText>
+                <StyledButton onClick={() => newMessage()}>
+                  send-new-message
+                </StyledButton>
+              </StyledThanks>
+            ) : !loading ? (
+              <form onSubmit={handleSubmit(onSubmit)}>
+                <div>
+                  <PaleText>_name:</PaleText>
+                  <StyledInput {...register("name", { required: true })} />
+                </div>
 
-              
-              ) : (
-                !loading ? (
-                  <form onSubmit={handleSubmit(onSubmit)}>
-                    <div>
-                      <PaleText>_name:</PaleText>
-                      <StyledInput {...register("name", { required: true })} />
-                    </div>
-  
-                    <div>
-                      <PaleText>_email:</PaleText>
-                      <StyledInput {...register("email", { required: true })} />
-                    </div>
-  
-                    <div>
-                      <PaleText>_message:</PaleText>
-                      <BigStyledInput
-                        {...register("message", { required: true })}
-                      />
-                    </div>
-                    <StyledButton>submit-message</StyledButton>
-                  </form>) : <Loading />
-              )}
-           
+                <div>
+                  <PaleText>_email:</PaleText>
+                  <StyledInput {...register("email", { required: true })} />
+                </div>
+
+                <div>
+                  <PaleText>_message:</PaleText>
+                  <BigStyledInput
+                    {...register("message", { required: true })}
+                  />
+                </div>
+                <StyledButton>submit-message</StyledButton>
+              </form>
+            ) : (
+              <Loading />
+            )}
           </div>
           <div className="code">
             <PaleText className="lines">
