@@ -16,7 +16,7 @@ export default function handler(
       service: "gmail",
       auth: {
         user: "beqamaisuradze912@gmail.com",
-        pass: "comacuttuzgipxfv",
+        pass: process.env.specificPassword,
       },
     });
 
