@@ -385,6 +385,8 @@ const StyledSkill = styled.div<{ name: string }>`
   &:hover::before {
     content: "${({ name }) => name}";
     font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
     color: #43d9ad;
     transition: 1s;
     position: absolute;
