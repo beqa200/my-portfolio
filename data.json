@@ -70,6 +70,14 @@
     },
     {
       "id": 4,
+      "name": "axioma-chatbot",
+      "teckstack": ["Next", "Tailwind CSS", "Typescript", "Rest API"],
+      "img": "/assets/projects/axioma-chatbot.png",
+      "liveLink": "https://axioma-chatbot.vercel.app/",
+      "githubLink": ""
+    },
+    {
+      "id": 5,
       "name": "cv-generator-redberry",
       "teckstack": ["React", "Styled Components", "Rest API", "Typescript"],
       "img": "/assets/projects/cv-generator-redberry.png",
@@ -77,7 +85,7 @@
       "githubLink": "https://github.com/beqa200/cv-generator-redberry"
     },
     {
-      "id": 5,
+      "id": 6,
       "name": "job-listing-api",
       "teckstack": ["Node", "MongoDB", "Typescript"],
       "img": "/assets/projects/job-listing-front.png",
@@ -85,7 +93,7 @@
       "githubLink": "https://github.com/beqa200/job-listing-api"
     },
     {
-      "id": 6,
+      "id": 7,
       "name": "ecommerce-product-page",
       "teckstack": ["React", "Typescript", "Styled Components"],
       "img": "/assets/projects/ecommerce-product-page.png",
@@ -93,7 +101,7 @@
       "githubLink": "https://github.com/beqa200/ecommerce-product-page"
     },
     {
-      "id": 7,
+      "id": 8,
       "name": "todo-app",
       "teckstack": ["React", "Typescript", "Styled Components"],
       "img": "/assets/projects/todo-app.png",
@@ -101,7 +109,7 @@
       "githubLink": "https://github.com/beqa200/todo-app"
     },
     {
-      "id": 8,
+      "id": 9,
       "name": "github-user-search",
       "teckstack": ["React", "Javascript", "Styled Components", "Rest API"],
       "img": "/assets/projects/github-user-search.png",
@@ -109,7 +117,7 @@
       "githubLink": "https://github.com/beqa200/github-user-search"
     },
     {
-      "id": 9,
+      "id": 10,
       "name": "interactive-credit-card-details-form",
       "teckstack": ["React", "Typescript", "Styled Components"],
       "img": "/assets/projects/interactive-credit-card-details-form.png",
@@ -117,7 +125,7 @@
       "githubLink": "https://github.com/beqa200/interactive-credit-card-details-form"
     },
     {
-      "id": 10,
+      "id": 11,
       "name": "interactive-pricing-component",
       "teckstack": ["Javascript", "Tailwind CSS"],
       "img": "/assets/projects/interactive-pricing-component.png",
@@ -125,7 +133,7 @@
       "githubLink": "https://github.com/beqa200/interactive-credit-card-details-form"
     },
     {
-      "id": 11,
+      "id": 12,
       "name": "tip-calculator-app",
       "teckstack": ["React", "Javascript", "Styled Components"],
       "img": "/assets/projects/tip-calculator-app.png",
@@ -133,7 +141,7 @@
       "githubLink": "https://github.com/beqa200/tip-calculator-app-react"
     },
     {
-      "id": 12,
+      "id": 13,
       "name": "tic-tac-toe",
       "teckstack": ["Javascript"],
       "img": "/assets/projects/tic-tac-toe.png",
@@ -141,7 +149,7 @@
       "githubLink": "https://github.com/beqa200/tic-tac-toe"
     },
     {
-      "id": 13,
+      "id": 14,
       "name": "single-page-design-portfolio",
       "teckstack": ["Javascript", "Tailwind CSS"],
       "img": "/assets/projects/single-page-design-portfolio.png",
@@ -149,7 +157,7 @@
       "githubLink": "https://github.com/beqa200/single-page-design-portfolio"
     },
     {
-      "id": 14,
+      "id": 15,
       "name": "faq-accordion-card",
       "teckstack": ["Javascript"],
       "img": "/assets/projects/faq-accordion-card.png",
@@ -157,7 +165,7 @@
       "githubLink": "https://github.com/beqa200/faq-accordion-card"
     },
     {
-      "id": 15,
+      "id": 16,
       "name": "art-gallery",
       "teckstack": [],
       "img": "/assets/projects/art-gallery.png",
@@ -165,7 +173,7 @@
       "githubLink": "https://github.com/beqa200/art-gallery"
     },
     {
-      "id": 16,
+      "id": 17,
       "name": "interactive-rating-component",
       "teckstack": ["React", "Javascript", "Styled Components"],
       "img": "/assets/projects/interactive-rating-component.png",
