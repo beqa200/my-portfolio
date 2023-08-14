@@ -8,6 +8,7 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap"
           rel="stylesheet"
         />
+        <link rel="shortcut icon" href="./assets/fav-icon.svg" type="image/x-icon" />
       </Head>
       <body>
         <Main />
