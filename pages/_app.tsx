@@ -6,6 +6,7 @@ import data from "../data.json";
 import React from "react";
 import Desktop from "@/styled-components/Desktop";
 import Footer from "@/components/Footer";
+import Head from "next/head";
 export const MyContext = createContext<contextProps>({
   menu: false,
   setMenu: () => {},
@@ -25,9 +26,20 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <MyContext.Provider value={{ menu, setMenu, data }}>
+       <Head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          rel="shortcut icon"
+          href="./assets/fav-icon.svg"
+        />
+      </Head>
       <GlobalWrapper menu={menu}>
         <GlobalStyle />
         <Header />
+       
         <Component {...pageProps} />
         <Desktop>
           <Footer />
