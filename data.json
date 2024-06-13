@@ -1,7 +1,7 @@
 {
   "position": "Full-Stack Developer",
-  "personalInfo": "Hi, I am Beka Maisuradze, 19 years old from Tbilisi, Georgia. I can confidently say that I am a highly motivated and goal-oriented individual who consistently strives to achieve his objectives every single day. With an unwavering dedication, I actively pursue my goals, ensuring that I remain focused and determined on the path to success. To provide tangible evidence of my dedication, I am proud to share that I have achieved this level of proficiency within a few short months. I invite you to explore my comprehensive portfolio and skills, which will undoubtedly paint a vivid picture of my capabilities.",
-  "proffesionalInfo": "As a junior software developer I am constantly striving to improve my skills and learn new technologies.  I stepped into this big Tech world just a few month ago and I found myself very flexible and adaptive to learning new things. At the moment I am a Lecturer/Mentor at Bitcamp. My role is to educate and guid students and aspiring developers in the latest trends and techniques in the field. In addition I am looking for new challenges and opportunities, so if you have any kind of offer don't hesitate to reach out",
+  "personalInfo": "Hi, I am Beka Maisuradze, 21 years old from Tbilisi, Georgia. I can confidently say that I am a highly motivated and goal-oriented individual who consistently strives to achieve his objectives every single day. With an unwavering dedication, I actively pursue my goals, ensuring that I remain focused and determined on the path to success. To provide tangible evidence of my dedication, I am proud to share that I have achieved this level of proficiency within a few short months. I invite you to explore my comprehensive portfolio and skills, which will undoubtedly paint a vivid picture of my capabilities.",
+  "proffesionalInfo": "As a Software developer I am constantly striving to improve my skills and learn new technologies.  I stepped into this big Tech world 2 years ago and I found myself very flexible and adaptive to learning new things. At the moment I am a Co-founder/Lecturer/Mentor at AlgoUni and Full-Stack Developer at Tetrobyte.",
   "techStacks": [
     "React",
     "Javascript",
@@ -10,24 +10,67 @@
     "Tailwind CSS",
     "Styled Components",
     "Node",
-    "Rest API"
+    "Rest API",
+    "Ant Design",
+    "GraphQL"
   ],
   "skills": [
-    { "name": "HTML", "logo": "/assets/skills/html.png" },
-    { "name": "CSS", "logo": "/assets/skills/css-3.png" },
-    { "name": "Tailwind CSS", "logo": "/assets/skills/tailwind.png" },
-    { "name": "React", "logo": "/assets/skills/reactLogo.png" },
+    {
+      "name": "HTML",
+      "logo": "/assets/skills/html.png"
+    },
+    {
+      "name": "CSS",
+      "logo": "/assets/skills/css-3.png"
+    },
+    {
+      "name": "Tailwind CSS",
+      "logo": "/assets/skills/tailwind.png"
+    },
+    {
+      "name": "React",
+      "logo": "/assets/skills/reactLogo.png"
+    },
     {
       "name": "Styled Components",
       "logo": "/assets/skills/styled-components.png"
     },
-    { "name": "Javascript", "logo": "/assets/skills/js.png" },
-    { "name": "Typescript", "logo": "/assets/skills/typescript.png" },
-    { "name": "Next", "logo": "/assets/skills/next.svg" },
-    { "name": "Node", "logo": "/assets/skills/node.png" },
-    { "name": "MongoDB", "logo": "/assets/skills/mongo.webp" },
-    { "name": "Git", "logo": "/assets/skills/git.png" },
-    { "name": "Rest API", "logo": "/assets/skills/icons8-rest-api-96.png" }
+    {
+      "name": "Javascript",
+      "logo": "/assets/skills/js.png"
+    },
+    {
+      "name": "Typescript",
+      "logo": "/assets/skills/typescript.png"
+    },
+    {
+      "name": "Next",
+      "logo": "/assets/skills/next.svg"
+    },
+    {
+      "name": "Node",
+      "logo": "/assets/skills/node.png"
+    },
+    {
+      "name": "MongoDB",
+      "logo": "/assets/skills/mongo.webp"
+    },
+    {
+      "name": "Git",
+      "logo": "/assets/skills/git.png"
+    },
+    {
+      "name": "Rest API",
+      "logo": "/assets/skills/icons8-rest-api-96.png"
+    },
+    {
+      "name": "Ant Design",
+      "logo": "/assets/skills/antd.png"
+    },
+    {
+      "name": "GraphQL",
+      "logo": "/assets/skills/graphql.png"
+    }
   ],
   "social": [
     {
@@ -46,86 +89,157 @@
   "projects": [
     {
       "id": 1,
+      "name": "maso-erp",
+      "teckstack": [
+        "React",
+        "Styled Components",
+        "Typescript",
+        "Ant Design",
+        "GraphQL"
+      ],
+      "img": "/assets/projects/maso-erp.png",
+      "liveLink": "https://erp.maso.ge/",
+      "githubLink": "https://github.com/Tetrobyte/maso-admin"
+    },
+    {
+      "id": 2,
+      "name": "deliverow-erp",
+      "teckstack": [
+        "Next",
+        "Tailwind CSS",
+        "Typescript",
+        "Ant Design"
+      ],
+      "img": "/assets/projects/deliverow.png",
+      "liveLink": "https://b2b-delivery-admin.vercel.app/",
+      "githubLink": "https://github.com/AlgoSoft-ge/b2b-delivery-admin"
+    },
+    {
+      "id": 3,
       "name": "task-management-app",
-      "teckstack": ["React", "Styled Components", "Typescript"],
+      "teckstack": [
+        "React",
+        "Styled Components",
+        "Typescript"
+      ],
       "img": "/assets/projects/task-management-website.png",
       "liveLink": "https://task-management-website-ten.vercel.app/platform-launch",
       "githubLink": "https://github.com/beqa200/task-management-website"
     },
     {
-      "id": 2,
+      "id": 4,
       "name": "entertainment-web-app",
-      "teckstack": ["Next", "Styled Components", "Typescript", "MongoDB"],
+      "teckstack": [
+        "Next",
+        "Styled Components",
+        "Typescript",
+        "MongoDB"
+      ],
       "img": "/assets/projects/entertainment-web-app.png",
       "liveLink": "https://entertainment-web-app-chi-cyan.vercel.app/",
       "githubLink": "https://github.com/beqa200/entertainment-web-app"
     },
     {
-      "id": 3,
+      "id": 5,
       "name": "audiophile-ecommerce-website",
-      "teckstack": ["React", "Styled Components", "Typescript"],
+      "teckstack": [
+        "React",
+        "Styled Components",
+        "Typescript"
+      ],
       "img": "/assets/projects/audiophile-ecommerce-website.png",
       "liveLink": "https://audiophile-ecommerce-website-theta.vercel.app/",
       "githubLink": "https://github.com/beqa200/audiophile-ecommerce-website"
     },
     {
-      "id": 4,
-      "name": "axioma-chatbot",
-      "teckstack": ["Next", "Tailwind CSS", "Typescript", "Rest API"],
+      "id": 6,
+      "name": "axioma-chatbot-demo",
+      "teckstack": [
+        "Next",
+        "Tailwind CSS",
+        "Typescript",
+        "Rest API"
+      ],
       "img": "/assets/projects/axioma-chatbot.png",
       "liveLink": "https://axioma-chatbot.vercel.app/",
       "githubLink": ""
     },
     {
-      "id": 5,
+      "id": 7,
       "name": "cv-generator-redberry",
-      "teckstack": ["React", "Styled Components", "Rest API", "Typescript"],
+      "teckstack": [
+        "React",
+        "Styled Components",
+        "Rest API",
+        "Typescript"
+      ],
       "img": "/assets/projects/cv-generator-redberry.png",
       "liveLink": "https://cv-generator-redberry.vercel.app/",
       "githubLink": "https://github.com/beqa200/cv-generator-redberry"
     },
     {
-      "id": 6,
+      "id": 8,
       "name": "job-listing-api",
-      "teckstack": ["Node", "MongoDB", "Typescript"],
+      "teckstack": [
+        "Node",
+        "MongoDB",
+        "Typescript"
+      ],
       "img": "/assets/projects/job-listing-front.png",
       "liveLink": "https://github.com/beqa200/job-listing-api",
       "githubLink": "https://github.com/beqa200/job-listing-api"
     },
     {
-      "id": 7,
+      "id": 9,
       "name": "ecommerce-product-page",
-      "teckstack": ["React", "Typescript", "Styled Components"],
+      "teckstack": [
+        "React",
+        "Typescript",
+        "Styled Components"
+      ],
       "img": "/assets/projects/ecommerce-product-page.png",
       "liveLink": "https://ecommerce-product-page-beqa200.vercel.app/",
       "githubLink": "https://github.com/beqa200/ecommerce-product-page"
     },
     {
-      "id": 8,
+      "id": 10,
       "name": "todo-app",
-      "teckstack": ["React", "Typescript", "Styled Components"],
+      "teckstack": [
+        "React",
+        "Typescript",
+        "Styled Components"
+      ],
       "img": "/assets/projects/todo-app.png",
       "liveLink": "https://todo-app-delta-orpin.vercel.app/",
       "githubLink": "https://github.com/beqa200/todo-app"
     },
     {
-      "id": 9,
+      "id": 11,
       "name": "github-user-search",
-      "teckstack": ["React", "Javascript", "Styled Components", "Rest API"],
+      "teckstack": [
+        "React",
+        "Javascript",
+        "Styled Components",
+        "Rest API"
+      ],
       "img": "/assets/projects/github-user-search.png",
       "liveLink": "https://github-user-search-ashy.vercel.app/",
       "githubLink": "https://github.com/beqa200/github-user-search"
     },
     {
-      "id": 10,
+      "id": 12,
       "name": "interactive-credit-card-details-form",
-      "teckstack": ["React", "Typescript", "Styled Components"],
+      "teckstack": [
+        "React",
+        "Typescript",
+        "Styled Components"
+      ],
       "img": "/assets/projects/interactive-credit-card-details-form.png",
       "liveLink": "https://interactive-credit-card-details-form-git-main-beqa200.vercel.app/",
       "githubLink": "https://github.com/beqa200/interactive-credit-card-details-form"
     },
     {
-      "id": 11,
+      "id": 13,
       "name": "interactive-pricing-component",
       "teckstack": ["Javascript", "Tailwind CSS"],
       "img": "/assets/projects/interactive-pricing-component.png",
@@ -133,15 +247,19 @@
       "githubLink": "https://github.com/beqa200/interactive-credit-card-details-form"
     },
     {
-      "id": 12,
+      "id": 14,
       "name": "tip-calculator-app",
-      "teckstack": ["React", "Javascript", "Styled Components"],
+      "teckstack": [
+        "React",
+        "Javascript",
+        "Styled Components"
+      ],
       "img": "/assets/projects/tip-calculator-app.png",
       "liveLink": "https://tip-calculator-app-react-orcin.vercel.app/",
       "githubLink": "https://github.com/beqa200/tip-calculator-app-react"
     },
     {
-      "id": 13,
+      "id": 15,
       "name": "tic-tac-toe",
       "teckstack": ["Javascript"],
       "img": "/assets/projects/tic-tac-toe.png",
@@ -149,7 +267,7 @@
       "githubLink": "https://github.com/beqa200/tic-tac-toe"
     },
     {
-      "id": 14,
+      "id": 16,
       "name": "single-page-design-portfolio",
       "teckstack": ["Javascript", "Tailwind CSS"],
       "img": "/assets/projects/single-page-design-portfolio.png",
@@ -157,7 +275,7 @@
       "githubLink": "https://github.com/beqa200/single-page-design-portfolio"
     },
     {
-      "id": 15,
+      "id": 17,
       "name": "faq-accordion-card",
       "teckstack": ["Javascript"],
       "img": "/assets/projects/faq-accordion-card.png",
@@ -165,7 +283,7 @@
       "githubLink": "https://github.com/beqa200/faq-accordion-card"
     },
     {
-      "id": 16,
+      "id": 18,
       "name": "art-gallery",
       "teckstack": [],
       "img": "/assets/projects/art-gallery.png",
@@ -173,9 +291,13 @@
       "githubLink": "https://github.com/beqa200/art-gallery"
     },
     {
-      "id": 17,
+      "id": 19,
       "name": "interactive-rating-component",
-      "teckstack": ["React", "Javascript", "Styled Components"],
+      "teckstack": [
+        "React",
+        "Javascript",
+        "Styled Components"
+      ],
       "img": "/assets/projects/interactive-rating-component.png",
       "liveLink": "https://interactive-rating-component-beqa200.vercel.app/",
       "githubLink": "https://github.com/beqa200/interactive-rating-component"
