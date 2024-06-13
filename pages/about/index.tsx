@@ -7,7 +7,11 @@ import Head from "next/head";
 import styled from "styled-components";
 import Image from "next/image";
 import StyledFolders from "@/styled-components/StyledFolders";
-import { useContext, useEffect, useState } from "react";
+import {
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import { MyContext } from "../_app";
 import StyledTabs from "@/styled-components/StyledTabs";
 import StyledButton from "@/styled-components/StyledButton";
@@ -16,18 +20,35 @@ export default function about() {
   const context = useContext(MyContext);
 
   const [isInfo, setisInfo] = useState(true);
-  const [isContacts, setIsContacts] = useState(false);
-  const [isPersonal, setisPersonal] = useState(true);
-  const [isProffesional, setisProffesional] = useState(false);
-  const [tabs, setTabs] = useState<string[]>(["personal"]);
+  const [isContacts, setIsContacts] =
+    useState(false);
+  const [isPersonal, setisPersonal] =
+    useState(true);
+  const [isProffesional, setisProffesional] =
+    useState(false);
+  const [tabs, setTabs] = useState<string[]>([
+    "personal",
+  ]);
 
   useEffect(() => {
-    if (isProffesional && !tabs.some((item) => item == "proffesional")) {
-      setTabs((tabs: string[]) => [...tabs, "proffesional"]);
+    if (
+      isProffesional &&
+      !tabs.some((item) => item == "proffesional")
+    ) {
+      setTabs((tabs: string[]) => [
+        ...tabs,
+        "proffesional",
+      ]);
     }
 
-    if (isPersonal && !tabs.some((item) => item == "personal")) {
-      setTabs((tabs: string[]) => [...tabs, "personal"]);
+    if (
+      isPersonal &&
+      !tabs.some((item) => item == "personal")
+    ) {
+      setTabs((tabs: string[]) => [
+        ...tabs,
+        "personal",
+      ]);
     }
   }, [isPersonal, isProffesional]);
 
@@ -52,27 +73,45 @@ export default function about() {
       </Head>
       <StyledAbout>
         <div className="flex-wrapper">
-          <WhiteText className="heading">_about-me</WhiteText>
+          <WhiteText className="heading">
+            _about-me
+          </WhiteText>
           <StyledFolders>
             <div
               onClick={() => {
                 setisInfo(!isInfo);
               }}
-              className={isInfo ? "folder active" : "folder"}
+              className={
+                isInfo
+                  ? "folder active"
+                  : "folder"
+              }
             >
               <Image
                 width={8.5}
                 height={6}
-                className={!isInfo ? "triangle" : ""}
-                src={"/assets/shared/triangle.png"}
+                className={
+                  !isInfo ? "triangle" : ""
+                }
+                src={
+                  "/assets/shared/triangle.png"
+                }
                 alt="triangle"
               />
               <WhiteText>info</WhiteText>
             </div>
-            <div className={isInfo ? "files active2" : "files active2-reverse"}>
+            <div
+              className={
+                isInfo
+                  ? "files active2"
+                  : "files active2-reverse"
+              }
+            >
               <div
                 onClick={clickPersonal}
-                className={isPersonal ? "active" : ""}
+                className={
+                  isPersonal ? "active" : ""
+                }
               >
                 {" "}
                 <Image
@@ -85,14 +124,18 @@ export default function about() {
                 <Image
                   width={12.73}
                   height={7.78}
-                  src={"/assets/shared/orange-folder.png"}
+                  src={
+                    "/assets/shared/orange-folder.png"
+                  }
                   alt="foler"
                 />
                 <WhiteText>personal</WhiteText>
               </div>
               <div
                 onClick={clickProffesional}
-                className={isProffesional ? "active" : ""}
+                className={
+                  isProffesional ? "active" : ""
+                }
               >
                 {" "}
                 <Image
@@ -105,10 +148,14 @@ export default function about() {
                 <Image
                   width={12.73}
                   height={7.78}
-                  src={"/assets/shared/green-folder.png"}
+                  src={
+                    "/assets/shared/green-folder.png"
+                  }
                   alt="folder"
                 />
-                <WhiteText>proffesional</WhiteText>
+                <WhiteText>
+                  proffesional
+                </WhiteText>
               </div>
             </div>
 
@@ -116,38 +163,58 @@ export default function about() {
               onClick={() => {
                 setIsContacts(!isContacts);
               }}
-              className={isContacts ? "folder active" : "folder"}
+              className={
+                isContacts
+                  ? "folder active"
+                  : "folder"
+              }
             >
               <Image
                 width={8.5}
                 height={6}
-                className={!isContacts ? "triangle" : ""}
-                src={"/assets/shared/triangle.png"}
+                className={
+                  !isContacts ? "triangle" : ""
+                }
+                src={
+                  "/assets/shared/triangle.png"
+                }
                 alt="triangle"
               />
               <WhiteText>contacts</WhiteText>
             </div>
             <div
-              className={isContacts ? "files active2" : "files active2-reverse"}
+              className={
+                isContacts
+                  ? "files active2"
+                  : "files active2-reverse"
+              }
             >
               <div>
                 <Image
                   width={12.73}
                   height={7.78}
-                  src={"/assets/contact-icons/mail-icon.png"}
+                  src={
+                    "/assets/contact-icons/mail-icon.png"
+                  }
                   alt="mail icon"
                 />
-                <PaleText>beqamaisuradze912@gmail.com</PaleText>
+                <PaleText>
+                  beqamaisuradze912@gmail.com
+                </PaleText>
               </div>
               <div>
                 {" "}
                 <Image
                   width={12.73}
                   height={7.78}
-                  src={"/assets/contact-icons/phone-icon.png"}
+                  src={
+                    "/assets/contact-icons/phone-icon.png"
+                  }
                   alt="phone icon"
                 />
-                <PaleText>+(995) 579 09 55 87</PaleText>
+                <PaleText>
+                  +(995) 579 09 55 87
+                </PaleText>
               </div>
             </div>
           </StyledFolders>
@@ -157,7 +224,11 @@ export default function about() {
             {tabs.map((item) => (
               <PaleText
                 className={
-                  tabs.some((item2) => item2 == item) ? "tabActive" : ""
+                  tabs.some(
+                    (item2) => item2 == item
+                  )
+                    ? "tabActive"
+                    : ""
                 }
                 key={item}
                 onClick={() => {
@@ -170,7 +241,9 @@ export default function about() {
               >
                 {item}
                 <Image
-                  src={"/assets/shared/delete.png"}
+                  src={
+                    "/assets/shared/delete.png"
+                  }
                   width={9}
                   height={9}
                   alt="close"
@@ -179,12 +252,20 @@ export default function about() {
 
                     tabs.length == 2 &&
                       setTabs((tabs: string[]) =>
-                        tabs.filter((item2) => item2 != item)
+                        tabs.filter(
+                          (item2) => item2 != item
+                        )
                       );
 
-                    if (item == "personal" && tabs.length == 2) {
+                    if (
+                      item == "personal" &&
+                      tabs.length == 2
+                    ) {
                       clickProffesional();
-                    } else if (item == "proffesional" && tabs.length == 2) {
+                    } else if (
+                      item == "proffesional" &&
+                      tabs.length == 2
+                    ) {
                       clickPersonal();
                     }
                   }}
@@ -192,26 +273,51 @@ export default function about() {
               </PaleText>
             ))}
           </StyledTabs>{" "}
-          <div className={isPersonal ? "active info" : "inactive info"}>
+          <div
+            className={
+              isPersonal
+                ? "active info"
+                : "inactive info"
+            }
+          >
             <WhiteText>// info </WhiteText>{" "}
             <PaleText>
               / personal <br /> <br />
             </PaleText>
-            <PaleText>/* {context.data.personalInfo} */</PaleText>
+            <PaleText>
+              /* {context.data.personalInfo} */
+            </PaleText>
           </div>
-          <div className={isProffesional ? "active info" : "inactive info"}>
+          <div
+            className={
+              isProffesional
+                ? "active info"
+                : "inactive info"
+            }
+          >
             <WhiteText>// info </WhiteText>{" "}
             <PaleText>
               / proffesional <br /> <br />
             </PaleText>
-            <PaleText>/* {context.data.proffesionalInfo} */</PaleText>
+            <PaleText>
+              /* {context.data.proffesionalInfo}{" "}
+              */
+            </PaleText>
           </div>
           <div className="second-section">
             <PurpleText>Skills</PurpleText>
             <div className="skillsWrapper">
               {context.data.skills.map((item) => (
-                <StyledSkill name={item.name} key={Math.random()}>
-                  <Image src={item.logo} width={200} height={200} alt="" />
+                <StyledSkill
+                  name={item.name}
+                  key={Math.random()}
+                >
+                  <Image
+                    src={item.logo}
+                    width={200}
+                    height={200}
+                    alt=""
+                  />
                 </StyledSkill>
               ))}
             </div>
@@ -225,7 +331,9 @@ export default function about() {
                 Download CV
               </a>{" "}
               <Image
-                src={"/assets/shared/download.svg"}
+                src={
+                  "/assets/shared/download.svg"
+                }
                 width={25}
                 height={25}
                 alt=""
@@ -315,7 +423,7 @@ const StyledAbout = styled.main`
       flex-wrap: wrap;
       align-content: start;
       justify-content: center;
-      gap: 40px 15%;
+      gap: 40px 10%;
       margin-top: 5%;
     }
 
